@@ -1,0 +1,79 @@
+.main {
+    background: url("../images/bg.jpg") no-repeat;
+    height: 560px;
+    -webkit-background-size: cover;
+    background-size: cover;
+    padding-top: 114px;
+    box-sizing: border-box;
+}
+.main .page {
+    width: 386px;
+    height: 443px;
+    border: 1px solid #e9e9e9;
+    float: right;
+    margin-right: 82px;
+    padding: 8px 42px 0 42px;
+    box-sizing: border-box;
+    text-align: center;
+}
+.main .page h2 {
+    font-size: 17px;
+    color: #482618;
+    height: 50px;
+    line-height: 50px;
+}
+.main .page input {
+    width: 300px;
+    height: 36px;
+    line-height: 36px;
+    outline: 0;
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+.main .page .im {
+    width: 138px;
+    float: left;
+}
+.main .page .ran_im {
+    display: block;
+    float: left;
+    height: 38px;
+    width: 116px;
+    border: 1px solid #dadada;
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+.main .page .information {
+    width: 138px;
+    float: left;
+}
+.main .page .information2 {
+    display: block;
+    float: left;
+    width: 150px;
+    height: 38px;
+    line-height: 38px;
+    border: 1px solid #dadada;
+    background-color: #fafafa;
+    margin-left: 5px;
+}
+.main .page .date {
+    margin-bottom: 0;
+}
+.main .page .showTxt {
+    width: 100%;
+    height: 42px;
+    line-height: 42px;
+    font-size: 12px;
+    color: #ff714d;
+    /*background-color: pink;*/
+}
+.main .page .regBtn {
+    width: 100%;
+    height: 48px;
+    line-height: 48px;
+    text-align: center;
+    color: #fff;
+    background-color: #442818;
+    cursor: pointer;
+}
