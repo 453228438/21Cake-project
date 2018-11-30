@@ -6,6 +6,7 @@
     padding-top: 114px;
     box-sizing: border-box;
 }
+
 .main .page {
     width: 386px;
     height: 443px;
@@ -16,12 +17,14 @@
     box-sizing: border-box;
     text-align: center;
 }
+
 .main .page h2 {
     font-size: 17px;
     color: #482618;
     height: 50px;
     line-height: 50px;
 }
+
 .main .page input {
     width: 300px;
     height: 36px;
@@ -30,10 +33,12 @@
     font-size: 12px;
     margin-bottom: 10px;
 }
+
 .main .page .im {
     width: 138px;
     float: left;
 }
+
 .main .page .ran_im {
     display: block;
     float: left;
@@ -43,10 +48,12 @@
     margin-left: 10px;
     margin-bottom: 10px;
 }
+
 .main .page .information {
     width: 138px;
     float: left;
 }
+
 .main .page .information2 {
     display: block;
     float: left;
@@ -57,9 +64,11 @@
     background-color: #fafafa;
     margin-left: 5px;
 }
+
 .main .page .date {
     margin-bottom: 0;
 }
+
 .main .page .showTxt {
     width: 100%;
     height: 42px;
@@ -68,6 +77,16 @@
     color: #ff714d;
     /*background-color: pink;*/
 }
+
+.main .page .showTxt2 {
+    width: 100%;
+    height: 42px;
+    line-height: 42px;
+    font-size: 12px;
+    color: greenyellow;
+    /*background-color: pink;*/
+}
+
 .main .page .regBtn {
     width: 100%;
     height: 48px;
