@@ -33,6 +33,7 @@ var register = (function() {
             this.$regBtn = this.$box.querySelector('.regBtn'); //获取注册按钮
             this.inpArr = this.$box.querySelectorAll('input');
             this.$im = this.$box.querySelector('.ran_im');
+            this.$ifm = this.$box.querySelector('.information2');
             // this.inpArr.push(this.$psw);
             // this.inpArr.push(this.$phone);
             console.log(this.inpArr);
@@ -104,6 +105,21 @@ var register = (function() {
                     }
                 }
             }
+            this.$ifm.onclick = function() {
+                that.setRaninformation();
+                var times = 30;
+                var sec = setInterval(function() {
+                    that.$ifm.innerHTML = "短信已发送（" + --times + "）";
+                    that.$ifm.disabled = true;
+                    that.$ifm.style.color = '#ccc';
+                    that.$ifm.style.cursor = 'default';
+                    if (times < 0) {
+                        clearInterval(sec);
+                        that.$ifm.disabled = false;
+                        that.$ifm.innerHTML = "点击获取短信验证码";
+                    }
+                }, 1000)
+            }
         },
         setRanNum() {
             var that = this;
@@ -122,6 +138,15 @@ var register = (function() {
             return str == reg;
 
         },
+        setRaninformation() {
+            var ranifm = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+            var nn = '';
+            for (let i = 0; i < 4; i++) {
+                var ri = getRandom(ranifm.length - 1, 0);
+                nn += ranifm[ri];
+            }
+            console.log(nn);
+        }
     }
 })()
 
