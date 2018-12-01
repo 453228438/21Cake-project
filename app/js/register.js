@@ -37,18 +37,41 @@ var register = (function() {
             for (let i = 0; i < this.inpArr.length; i++) {
                 this.inpArr[i].onblur = function() {
                     if (this.value == '') {
+                        that.$txt.style.color = '#ff714d';
                         that.$txt.innerHTML = '输入不能为空';
                     } else {
                         var bool = checkInput[this.name](this.value);
                         if (bool) {
                             // this.$txt.className = 'showTxt2';
-                            that.$txt.style.color = 'greenyellow';
-                            that.$txt.innerHTML = '验证成功';
+                            // that.$txt.style.color = 'green';
+                            // that.$txt.innerHTML = '验证成功';
                         } else {
+                            that.$txt.style.color = '#ff714d';
                             that.$txt.innerHTML = '您的输入有误';
                         }
                     }
                 }
+            }
+            phone.onchange = function() {
+                console.log(this.value);
+                var obj = {
+                    // method: 'POST',
+                    data: {
+                        phone: this.value
+                    },
+                    success: function(data) {
+                        data = JSON.parse(data);
+                        console.log(data.code);
+                        if (data.code == '10000') {
+                            that.$txt.style.color = '#ff714d';
+                            that.$txt.innerHTML = '手机号已存在';
+                        } else if (data.code == '0') {
+                            that.$txt.style.color = 'green';
+                            that.$txt.innerHTML = '手机号可以使用';
+                        }
+                    }
+                }
+                sendAjax('../server/php/register.php', obj);
             }
         },
     }
