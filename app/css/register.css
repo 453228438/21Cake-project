@@ -47,6 +47,10 @@
     border: 1px solid #dadada;
     margin-left: 10px;
     margin-bottom: 10px;
+    line-height: 38px;
+    font-size: 18px;
+    color: hotpink;
+    cursor: pointer;
 }
 
 .main .page .information {
