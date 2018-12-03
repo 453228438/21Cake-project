@@ -111,23 +111,23 @@ var register = (function() {
                     }
                 }
             }
-            this.$ifm.onclick = function() {
+            this.$ifm.onclick = function() { //点击按钮后发送四位数的验证码，请在控制台查看
                 that.setRaninformation();
-                var times = 30;
+                var times = 30; //限时30秒
                 var sec = setInterval(function() {
-                    that.$ifm.innerHTML = "短信已发送（" + --times + "）";
-                    that.$ifm.disabled = true;
+                    that.$ifm.innerHTML = "短信已发送（" + --times + "）"; //倒计时
+                    that.$ifm.disabled = true; //开启禁用模式
                     that.$ifm.style.color = '#ccc';
                     that.$ifm.style.cursor = 'default';
-                    if (times < 0) {
-                        clearInterval(sec);
-                        that.$ifm.disabled = false;
+                    if (times < 0) { //当时间数完后
+                        clearInterval(sec); //清除定时器
+                        that.$ifm.disabled = false; //取消禁用模式
                         that.$ifm.innerHTML = "点击获取短信验证码";
                         that.$ifm.style.color = '#000';
                     }
                 }, 1000)
             }
-            this.$information.onblur = function() {
+            this.$information.onblur = function() { //当输入框失去焦点时，验证输入内容是否跟发送的一致
                 if (this.value == '') {
                     that.$txt.style.color = '#ff714d';
                     that.$txt.innerHTML = '输入不能为空';
@@ -146,7 +146,7 @@ var register = (function() {
             this.$psw.addEventListener('blur', function() {
                 that.$psw2.onblur();
             })
-            this.$psw2.onblur = function() {
+            this.$psw2.onblur = function() { //当二次密码框失去焦点后，验证是否和一次密码框的密码一致
                 if (this.value === that.$psw.value) {
                     that.$txt.style.color = 'green';
                     that.$txt.innerHTML = '验证成功';
@@ -156,17 +156,17 @@ var register = (function() {
                     that.$txt.innerHTML = '您两次的密码不一致';
                 }
             }
-            this.$regBtn.onclick = function() {
-                var $txtAll = that.$box.querySelectorAll('input');
+            this.$regBtn.onclick = function() { //点击注册按钮时，
+                var $txtAll = that.$box.querySelectorAll('input'); //获取所有的input输入框
                 for (let i = 0; i < $txtAll.length; i++) {
                     // console.log(i);
-                    if ($txtAll[i].className.indexOf('suc') == -1) {
-                        $txtAll[i].focus();
-                        return false;
+                    if ($txtAll[i].className.indexOf('suc') == -1) { //判断它们是否有suc的class名，此class名表示已验证成功
+                        $txtAll[i].focus(); //如果没有就获取该输入框的焦点
+                        return false; //不允许跳转
                     }
                 }
             }
-            this.$birth.onblur = function() {
+            this.$birth.onblur = function() { //判断用户是否输入了生日
                 if (this.value == '') {
                     that.$txt.style.color = '#ff714d';
                     that.$txt.innerHTML = '输入不能为空';
