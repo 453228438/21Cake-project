@@ -11,12 +11,15 @@
 		echo "<script>
             alert('注册成功！');
             if(alert){
-                window.location ='../app/login.html';
+                window.location ='../../app/login.html';
             }
 		</script>";
 	}else {
 		"<script>
-			alert('注册失败！');
+            alert('注册失败！');
+            if(alert){
+                window.location ='register.html';
+            }
 		</script>";
 	}
 ?>
