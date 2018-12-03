@@ -21,6 +21,7 @@ var checkInput = {
 }
 
 var register = (function() {
+    var nn;
     return {
         init: function(ele) {
             this.$box = document.querySelector(ele);
@@ -28,14 +29,16 @@ var register = (function() {
             this.$psw = this.$box.querySelector('.psw'); //获取密码输入框
             this.$psw2 = this.$box.querySelector('.psw2'); //获取确认密码输入框
             this.$ranImg = this.$box.querySelector('.im'); //获取随机图片字符输入框
-            this.$information = this.$box.querySelector('.information2'); //获取短信验证输入框
+            this.$information = this.$box.querySelector('.information'); //获取短信验证输入框
             this.$txt = this.$box.querySelector('.showTxt'); //获取验证错误提示语框
             this.$regBtn = this.$box.querySelector('.regBtn'); //获取注册按钮
-            this.inpArr = this.$box.querySelectorAll('input');
-            this.$im = this.$box.querySelector('.ran_im');
-            this.$ifm = this.$box.querySelector('.information2');
-            // this.inpArr.push(this.$psw);
-            // this.inpArr.push(this.$phone);
+            // this.inpArr = this.$box.querySelectorAll('input');
+            this.$im = this.$box.querySelector('.ran_im'); //获取生成随机字符的框
+            this.$ifm = this.$box.querySelector('.information2'); //获取生成随机短信验证的框
+            this.$birth = this.$box.querySelector('.date');
+            this.inpArr = [];
+            this.inpArr.push(this.$psw);
+            this.inpArr.push(this.$phone);
             console.log(this.inpArr);
             this.event();
             this.setRanNum();
@@ -43,7 +46,7 @@ var register = (function() {
         },
         event() {
             var that = this;
-            var phone = this.inpArr[0];
+            var phone = this.inpArr[1];
             // debugger;
             for (let i = 0; i < this.inpArr.length; i++) {
                 this.inpArr[i].onblur = function() {
@@ -54,8 +57,9 @@ var register = (function() {
                         var bool = checkInput[this.name](this.value);
                         if (bool) {
                             // this.$txt.className = 'showTxt2';
-                            // that.$txt.style.color = 'green';
-                            // that.$txt.innerHTML = '验证成功';
+                            that.$txt.style.color = 'green';
+                            that.$txt.innerHTML = '验证成功';
+                            this.classList.add('suc');
                         } else {
                             that.$txt.style.color = '#ff714d';
                             that.$txt.innerHTML = '您的输入有误';
@@ -79,6 +83,7 @@ var register = (function() {
                         } else if (data.code == '0') {
                             that.$txt.style.color = 'green';
                             that.$txt.innerHTML = '手机号可以使用';
+                            phone.classList.add('suc');
                         }
                     }
                 }
@@ -96,6 +101,7 @@ var register = (function() {
                     if (bool) {
                         that.$txt.style.color = 'green';
                         that.$txt.innerHTML = '验证成功';
+                        this.classList.add('suc');
                     } else {
                         that.$txt.style.color = '#ff714d';
                         that.$txt.innerHTML = '您的输入有误';
@@ -117,8 +123,58 @@ var register = (function() {
                         clearInterval(sec);
                         that.$ifm.disabled = false;
                         that.$ifm.innerHTML = "点击获取短信验证码";
+                        that.$ifm.style.color = '#000';
                     }
                 }, 1000)
+            }
+            this.$information.onblur = function() {
+                if (this.value == '') {
+                    that.$txt.style.color = '#ff714d';
+                    that.$txt.innerHTML = '输入不能为空';
+                } else {
+                    var bool = that.checkInput3(this.value);
+                    if (bool) {
+                        that.$txt.style.color = 'green';
+                        that.$txt.innerHTML = '验证成功';
+                        this.classList.add('suc');
+                    } else {
+                        that.$txt.style.color = '#ff714d';
+                        that.$txt.innerHTML = '您的输入有误';
+                    }
+                }
+            }
+            this.$psw.addEventListener('blur', function() {
+                that.$psw2.onblur();
+            })
+            this.$psw2.onblur = function() {
+                if (this.value === that.$psw.value) {
+                    that.$txt.style.color = 'green';
+                    that.$txt.innerHTML = '验证成功';
+                    this.classList.add('suc');
+                } else {
+                    that.$txt.style.color = '#ff714d';
+                    that.$txt.innerHTML = '您两次的密码不一致';
+                }
+            }
+            this.$regBtn.onclick = function() {
+                var $txtAll = that.$box.querySelectorAll('input');
+                for (let i = 0; i < $txtAll.length; i++) {
+                    // console.log(i);
+                    if ($txtAll[i].className.indexOf('suc') == -1) {
+                        $txtAll[i].focus();
+                        return false;
+                    }
+                }
+            }
+            this.$birth.onblur = function() {
+                if (this.value == '') {
+                    that.$txt.style.color = '#ff714d';
+                    that.$txt.innerHTML = '输入不能为空';
+                } else {
+                    that.$txt.style.color = 'green';
+                    that.$txt.innerHTML = '验证成功';
+                    this.classList.add('suc');
+                }
             }
         },
         setRanNum() {
@@ -140,12 +196,17 @@ var register = (function() {
         },
         setRaninformation() {
             var ranifm = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
-            var nn = '';
+            nn = '';
             for (let i = 0; i < 4; i++) {
                 var ri = getRandom(ranifm.length - 1, 0);
                 nn += ranifm[ri];
             }
             console.log(nn);
+        },
+        checkInput3(str) {
+            // console.log(nn);
+            var reg2 = nn;
+            return str == reg2;
         }
     }
 })()
