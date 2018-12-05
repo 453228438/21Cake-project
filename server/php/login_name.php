@@ -5,14 +5,17 @@
     $where = "select * from `user` where username='$username'";//查找语句
     $coon -> query("SET NAMES 'utf8'");//字符集
     $do = $coon -> query($where);//执行sql语句
-    $result = $do -> fetch_assoc();
-    // $row = $do -> fgetc_array();
+    $result=mysqli_query($coon,$where);
+    $result2 = $do -> fetch_assoc();
+    $row=mysqli_fetch_assoc($result);
+    //printf ("%s",$row["password"]);
+    $psw = $row["password"];
     // var_dump($row);
-    if($result) {
+    if($result2) {
         //  查到数据
-        $arr = array("code" => "10000", "data" => "");
+        $arr = array("code" => "10000", "data" => "$psw");
     } else {
-        // 没有查询到
+        // 没有查询到  
         $arr = array("code" => "0", "data" => "");
     }
     echo json_encode($arr);

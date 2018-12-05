@@ -1,5 +1,6 @@
 var login = (function() {
     var nn;
+    var returnPsw;
     return {
         init: function(ele) {
             this.$box = document.querySelector(ele);
@@ -41,45 +42,60 @@ var login = (function() {
 
             }
             username.onblur = function() {
-                    var obj = {
-                        data: {
-                            username: this.value
-                        },
-                        success: function(data) {
-                            data = JSON.parse(data);
-                            console.log(data.code);
-                            if (data.code == '10000') {
-                                that.$txt1.style.color = 'green';
-                                that.$txt1.innerHTML = '用户名正确';
-                            } else if (data.code == '0') {
-                                that.$txt1.style.color = '#ff714d';
-                                that.$txt1.innerHTML = '用户名不存在';
-                                username.classList.add('suc');
-                            }
-                        }
+                var obj = {
+                    data: {
+                        username: this.value
                     }
-                    sendAjax('../server/php/login_name.php', obj);
+                    // success: function(data) {
+                    //     data = JSON.parse(data);
+                    //     //console.log(data.code);
+                    //     //console.log(data.data);
+                    //     if (data.code == '10000') {
+                    //         that.$txt1.style.color = 'green';
+                    //         that.$txt1.innerHTML = '用户名正确';
+                    //         returnPsw = data.data;
+
+                    //     } else if (data.code == '0') {
+                    //         that.$txt1.style.color = '#ff714d';
+                    //         that.$txt1.innerHTML = '用户名不存在';
+                    //         username.classList.add('suc');
+                    //     }
+                    // }
                 }
-                // psw.onblur = function() {
-                //     var obj = {
-                //         data: {
-                //             psw: this.value
-                //         },
-                //         success: function(data) {
-                //             data = JSON.parse(data);
-                //             console.log(data.code);
-                //             if (data.code == '10000') {
-                //                 that.$txt1.style.color = 'green';
-                //                 that.$txt1.innerHTML = '密码正确';
-                //             } else if (data.code == '0') {
-                //                 that.$txt1.style.color = '#ff714d';
-                //                 that.$txt1.innerHTML = '密码错误';
-                //                 psw.classList.add('suc');
-                //             }
-                //         }
-                //     }
-                //     sendAjax('../server/php/login_psw.php', obj);
-                // }
+                sendAjax2('../server/php/login_name.php', obj).then(data => {
+                    data = JSON.parse(data);
+                    if (data.code == '10000') {
+                        that.$txt1.style.color = 'green';
+                        that.$txt1.innerHTML = '用户名正确';
+                        username.classList.add('suc');
+                        returnPsw = data.data;
+                        console.log(returnPsw);
+                    };
+                }).catch(date => {
+                    data = JSON.parse(data);
+                    if (data.code == '0') {
+                        that.$txt1.style.color = '#ff714d';
+                        that.$txt1.innerHTML = '用户名不存在';
+                    }
+                })
+            }
+
+            //console.log(returnPsw);
+            psw.onblur = function() {
+                //console.log(returnPsw);
+                if (this.value == returnPsw) {
+                    that.$txt1.style.color = 'green';
+                    that.$txt1.innerHTML = '密码正确';
+                    this.classList.add('suc');
+                } else if (this.value == '') {
+                    that.$txt1.style.color = '#ff714d';
+                    that.$txt1.innerHTML = '输入不能为空';
+                } else {
+                    that.$txt1.style.color = '#ff714d';
+                    that.$txt1.innerHTML = '您的输入有误';
+                }
+                //sendAjax('../server/php/login_psw.php', obj);
+            }
             phone.onblur = function() {
                 var obj = {
                     data: {
@@ -115,7 +131,7 @@ var login = (function() {
                         this.classList.add('suc');
                     } else {
                         that.$txt2.style.color = '#ff714d';
-                        that.$txt2.innerHTML = '您的输入有误';
+                        that.$txt2.innerHTML = '密码不正确';
                         this.onfocus = function() { //如果输入有误，重新获取焦点后刷新字符图片
                             that.setRanNum();
                         }
@@ -155,6 +171,7 @@ var login = (function() {
                 }
             }
         },
+
         setRanNum() {
             var that = this;
             var ranArr = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k'];
