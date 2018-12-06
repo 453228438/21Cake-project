@@ -151,6 +151,7 @@ var login = (function() {
                         that.$imim2.disabled = false; //取消禁用模式
                         that.$imim2.innerHTML = "点击获取短信验证码";
                         that.$imim2.style.color = '#000';
+                        that.$imim2.style.cursor = 'pointer';
                     }
                 }, 1000)
             }

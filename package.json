@@ -1,0 +1,22 @@
+{
+  "name": "21cake-project",
+  "version": "1.0.0",
+  "description": "this is my first project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/453228438/21Cake-project.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/453228438/21Cake-project/issues"
+  },
+  "homepage": "https://github.com/453228438/21Cake-project#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  }
+}
