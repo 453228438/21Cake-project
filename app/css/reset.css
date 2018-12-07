@@ -3,21 +3,29 @@
     padding: 0;
     margin: 0;
 }
-body,html {
+
+body,
+html {
     height: 100%;
     width: 100%;
     font-family: "微软雅黑", Arial;
 }
+
 a {
     text-decoration: none;
     /*display: block;*/
 }
+
+
+
 ul {
     /*overflow: hidden;*/
 }
+
 li {
     list-style: none;
 }
+
 .clearfix:after {
     content: " ";
     clear: both;
@@ -26,10 +34,12 @@ li {
     overflow: hidden;
     visibility: hidden;
 }
+
 .clearfix1:after {
     /*IE6、7专用*/
     *zoom: 1;
 }
+
 .heart {
     width: 1195px;
     margin: 0 auto;

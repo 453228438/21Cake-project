@@ -14,7 +14,7 @@
 
 <body>
     <!-- 注意：ID为wrapper-showimage元素下的img标签是src图片，其他均为背景图片 -->
-    <div class="header" style="display: none">
+    <div class="header" style="display: block">
         <div class="headerInner heart">
             <h1>
                 <a href="#" title="21Cake"></a>
@@ -44,7 +44,7 @@
             </ul>
         </div>
     </div>
-    <header class="details-nav" style="display:block">
+    <header class="details-nav" style="display:none">
         <p class="left">北海道吐司(4片)</p>
         <div class="jiesuan" style="width:260px;float: right;">
             <a href="javascript:void(0)"><i class="iconfont icon-gwc"></i></a>
@@ -52,7 +52,7 @@
             <p class="right">¥9.90/一份</p>
         </div>
     </header>
-    <div class="options" style="display: block">
+    <div class="options" style="display: none">
         <p class="details-img-box">
             <span><i></i>约150g</span>
             <span><i class="iconfont icon-pengyoufill"></i>适合2-3人分享</span>
@@ -72,9 +72,9 @@
             <div class="big-banner">
             </div>
             <div class="min-banner">
-                <img class="img1" />
-                <img class="img2" />
-                <img class="img3" />
+                <div class="img1"></div>
+                <div class="img2"></div>
+                <div class="img3"></div>
             </div>
         </section>
     </div>
@@ -211,6 +211,8 @@
             Copyright© 21Cake蛋糕官网商城 2007-2018, 版权所有 京ICP备14006254号-1
         </div>
     </div>
+    <script src="js/jquery-3.3.1.js"></script>
+    <script src="js/detall pages.js"></script>
 </body>
 
 </html>
