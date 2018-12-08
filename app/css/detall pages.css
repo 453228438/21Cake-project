@@ -83,7 +83,7 @@
     height: 25px;
     line-height: 20px;
     margin: 5px 0;
-    margin-right: 20px;
+    margin-right: 8px;
     font-size: 12px;
     color: #684029;
     display: flex;
@@ -106,7 +106,14 @@
     margin-right: 3px;
 }
 
-.options .details-img-box span:nth-child(3) .icon-shizhongfill {
+.options .details-img-box span:nth-child(3) i {
+    width: 10px;
+    height: 18px;
+    display: inline-block;
+    margin-right: 2px;
+}
+
+.options .details-img-box span:nth-child(4) .icon-shizhongfill {
     font-size: 20px;
     color: #684029;
     margin-right: 3px;
@@ -191,7 +198,7 @@
     width: 924px;
     height: 520px;
     float: left;
-    background-image: url(../images/beihaidao-tusi.jpg);
+    /* background-image: url(../images/beihaidao-tusi.jpg); */
     background-size: 100%;
 }
 
@@ -211,40 +218,38 @@
     border: 1px solid #C69C6D;
     margin-top: 20px;
     cursor: pointer;
-    background-image: url(../images/beihaidao-tusi.jpg);
     background-size: 100%;
 }
 
 #wrapper-banner .banner .min-banner .img2 {
-    background-image: url(../images/beihaidao-tusi2.jpg);
     background-size: 100%;
 }
 
 #wrapper-banner .banner .min-banner .img3 {
-    background-image: url(../images/beihaidao-tusi3.jpg);
     background-size: 100%;
 }
 
 #warpper-main {
-    height: 266px;
+    height: auto;
 }
 
 #warpper-main .main {
-    height: 266px;
+    display: flex;
+    height: auto;
     border-bottom: #D8D8D8 solid 1px;
+    justify-content: space-between;
 }
 
 /* #warpper-main .content {} */
 #warpper-main .main .main-left {
     width: 485px;
-    height: 255px;
-    float: left;
+    height: auto;
+    padding-bottom: 10px;
 }
 
 #warpper-main .main .main-right {
     width: 500px;
-    height: 216px;
-    float: right;
+    height: auto;
 }
 
 #warpper-main .main .main-left h1 {
@@ -256,8 +261,8 @@
 }
 
 #warpper-main .main .main-left p {
-    height: 20px;
-    margin-bottom: 30px;
+    height: auto;
+    margin-bottom: 20px;
 }
 
 #warpper-main .main .main-left p a {
@@ -269,6 +274,7 @@
     border-radius: 100px;
     margin-right: 6px;
     font-size: 12px;
+    margin-top: 5px;
 }
 
 #warpper-main .main .main-left .mikl {
@@ -279,7 +285,7 @@
     align-items: center;
     font-size: 14px;
     color: #684029;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 
 #warpper-main .main .main-left .mikl i {
@@ -313,12 +319,18 @@
 
 }
 
+#warpper-main .main .main-right .details-img-box span:nth-child(3) i {
+    width: 10px;
+    height: 18px;
+    display: inline-block;
+}
+
 #warpper-main .main .main-right .details-img-box span {
     float: left;
     height: 25px;
     line-height: 20px;
     margin: 5px 0;
-    margin-right: 20px;
+    margin-right: 15px;
     font-size: 12px;
     color: #684029;
     display: flex;
