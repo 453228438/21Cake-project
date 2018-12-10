@@ -1,3 +1,10 @@
+// function $my(ele) {
+//     return document.querySeletor(ele);
+// }
+
+
+
+
 // 生成随机色
 function getColor() {
     var arr = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 'a', 'b', 'c', 'd', 'e', 'f'];
@@ -121,15 +128,15 @@ function addEventListener(element, type, fn) {
 
 
 //为任意元素，解绑任意的事件（任意的元素，事件的类型，事件处理函数的名字）
-function removeEventListener(element, type, fnName) {
-    if (element.removeEventListener) { //判断是否存在这个方法
-        element.removeEventListener(type, fnName, false); //如果存在便执行
-    } else if (element.detachEvent) { //如果上面的不存在，则判断这个方法存不存在
-        element.detachEvent("on" + type, fnName); //存在便执行
-    } else {
-        element["on" + tpye] = fnName;
-    }
-}
+// function removeEventListener(element, type, fnName) {
+//     if (element.removeEventListener) { //判断是否存在这个方法
+//         element.removeEventListener(type, fnName, false); //如果存在便执行
+//     } else if (element.detachEvent) { //如果上面的不存在，则判断这个方法存不存在
+//         element.detachEvent("on" + type, fnName); //存在便执行
+//     } else {
+//         element["on" + tpye] = fnName;
+//     }
+// }
 
 
 

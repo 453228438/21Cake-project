@@ -1,0 +1,132 @@
+.shopHead {
+    height: 116px;
+    background-color: #fff;
+    margin-top: 104px;
+}
+
+.shopHeadInner {
+    border-bottom: 1px solid #f2f2f2;
+    border-top: 1px solid #f2f2f2;
+    height: 116px;
+    background-color: #fff;
+}
+
+.shopHeadInner ul {
+    width: 100%;
+    height: 58px;
+}
+
+.shopHeadInner ul li {
+    line-height: 58px;
+    float: left;
+    margin-right: 27px;
+    color: #a7a7a7;
+    height: 58px;
+}
+
+.shopHeadInner ul li:nth-child(1) {
+    margin-right: 60px;
+}
+
+.shopHeadInner ul li a {
+    line-height: 58px;
+    color: #684029;
+    font-size: 14px;
+}
+
+.shopHeadInner ul li a:hover {
+    color: #eec188;
+}
+
+.shopMain {
+    background-color: #fff;
+}
+
+.shopMainInner {
+    background-color: #fff;
+    padding-top: 35px;
+}
+
+.shopMainInner ul {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.shopMainInner ul li {
+    width: 228px;
+    height: 364px;
+    /* background-color: pink; */
+    /* box-sizing: border-box; */
+    margin: 0 18px;
+    /* padding: 0 18px; */
+    margin-bottom: 15px;
+}
+
+.shopMainInner ul li a {
+    display: block;
+    width: 228px;
+    height: 364px;
+}
+
+.shopMainInner ul li a img {
+    width: 228px;
+    height: 246px;
+}
+
+.shopMainInner ul li a .p1 {
+    text-align: center;
+    font-size: 14px;
+    color: #684029;
+    line-height: 24px;
+}
+
+.shopMainInner ul li a:hover .p1 {
+    color: #eec188;
+}
+
+.shopMainInner ul li a .p2 {
+    color: #bb9772;
+    text-align: center;
+    font-size: 14px;
+    line-height: 22px;
+}
+
+.shopMainInner ul li a .dv1 {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 5px;
+    margin-bottom: 14px;
+}
+
+.shopMainInner ul li a .dv1 span {
+    display: block;
+    height: 17px;
+    border: 1px solid #d5bfa7;
+    color: #d5bfa7;
+    font-size: 12px;
+    border-radius: 8px;
+    padding: 0 7px;
+    margin-right: 6px;
+}
+
+.shopMainInner ul li a .dv2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    color: #684029;
+}
+
+.shopMainInner ul li a .dv2 i {
+    display: inline-block;
+    background: url('../images/icon.png');
+    background-position: -216px -40px;
+    background-size: 310px 120px;
+    height: 28px;
+    width: 28px;
+    margin-right: 2px;
+}

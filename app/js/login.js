@@ -43,6 +43,7 @@ var login = (function() {
             }
             username.onblur = function() {
                 var obj = {
+                    //method: 'POST',
                     data: {
                         username: this.value
                     }
@@ -76,6 +77,7 @@ var login = (function() {
                     if (data.code == '0') {
                         that.$txt1.style.color = '#ff714d';
                         that.$txt1.innerHTML = '用户名不存在';
+                        username.classList.remove('suc');
                     }
                 })
             }
@@ -90,9 +92,11 @@ var login = (function() {
                 } else if (this.value == '') {
                     that.$txt1.style.color = '#ff714d';
                     that.$txt1.innerHTML = '输入不能为空';
+                    this.classList.remove('suc');
                 } else {
                     that.$txt1.style.color = '#ff714d';
                     that.$txt1.innerHTML = '您的输入有误';
+                    this.classList.remove('suc');
                 }
                 //sendAjax('../server/php/login_psw.php', obj);
             }
@@ -107,10 +111,12 @@ var login = (function() {
                         if (data.code == '10000') {
                             that.$txt2.style.color = 'green';
                             that.$txt2.innerHTML = '手机号正确';
+                            phone.classList.add('suc');
                         } else if (data.code == '0') {
                             that.$txt2.style.color = '#ff714d';
                             that.$txt2.innerHTML = '手机号不存在';
-                            username.classList.add('suc');
+                            phone.classList.remove('suc');
+
                         }
                     }
                 }
@@ -123,6 +129,7 @@ var login = (function() {
                 if (this.value == '') {
                     that.$txt2.style.color = '#ff714d';
                     that.$txt2.innerHTML = '输入不能为空';
+                    this.classList.remove('suc');
                 } else {
                     var bool = that.checkInput(this.value);
                     if (bool) {
@@ -132,6 +139,7 @@ var login = (function() {
                     } else {
                         that.$txt2.style.color = '#ff714d';
                         that.$txt2.innerHTML = '密码不正确';
+                        this.classList.remove('suc');
                         this.onfocus = function() { //如果输入有误，重新获取焦点后刷新字符图片
                             that.setRanNum();
                         }
@@ -139,11 +147,14 @@ var login = (function() {
                 }
             }
             this.$imim2.onclick = function() { //点击按钮后发送四位数的验证码，请在控制台查看
-                that.setRaninformation();
+                //开启禁用模式
                 var times = 30; //限时30秒
+                if (this.disabled != 'disabled') {
+                    that.setRaninformation();
+                }
+                this.disabled = 'disabled';
                 var sec = setInterval(function() {
                     that.$imim2.innerHTML = "短信已发送（" + --times + "）"; //倒计时
-                    that.$imim2.disabled = true; //开启禁用模式
                     that.$imim2.style.color = '#ccc';
                     that.$imim2.style.cursor = 'default';
                     if (times < 0) { //当时间数完后
@@ -159,6 +170,7 @@ var login = (function() {
                 if (this.value == '') {
                     that.$txt2.style.color = '#ff714d';
                     that.$txt2.innerHTML = '输入不能为空';
+                    this.classList.remove('suc');
                 } else {
                     var bool = that.checkInput2(this.value);
                     if (bool) {
@@ -168,8 +180,31 @@ var login = (function() {
                     } else {
                         that.$txt2.style.color = '#ff714d';
                         that.$txt2.innerHTML = '您的输入有误';
+                        this.classList.remove('suc');
                     }
                 }
+            }
+            this.$btn2.onclick = function() { //点击注册按钮时，
+                var $txtAll = that.$phoneBox.querySelectorAll('inp11'); //获取所有的input输入框
+                for (let i = 0; i < $txtAll.length; i++) {
+                    // console.log(i);
+                    if ($txtAll[i].className.indexOf('suc') == -1) { //判断它们是否有suc的class名，此class名表示已验证成功
+                        $txtAll[i].focus(); //如果没有就获取该输入框的焦点
+                        return false; //不允许跳转
+                    }
+                }
+                cookie.setItem('username', `${phone.value}`, 2);
+            }
+            this.$btn1.onclick = function() {
+                var $txtAll = that.$nameBox.querySelectorAll('inp11');
+                for (let i = 0; i < $txtAll.length; i++) {
+                    // console.log(i);
+                    if ($txtAll[i].className.indexOf('suc') == -1) { //判断它们是否有suc的class名，此class名表示已验证成功
+                        $txtAll[i].focus(); //如果没有就获取该输入框的焦点
+                        return false; //不允许跳转
+                    }
+                }
+                cookie.setItem('username', `${username.value}`, 2);
             }
         },
 

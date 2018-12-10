@@ -70,8 +70,8 @@ gulp.task('minihtml', function () {
 })
 gulp.task('connect', function () {
     connect.server({
-        root: 'app',
+        root: '21Cake-project',
         port: '8888',
-        livereload: true,
+        livereload: true
     });
 })

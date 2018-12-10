@@ -1,4 +1,5 @@
 /*初始化*/
+
 * {
     padding: 0;
     margin: 0;
@@ -16,7 +17,13 @@ a {
     /*display: block;*/
 }
 
+<<<<<<< HEAD
+i {
+    font-style: normal;
+}
+=======
 
+>>>>>>> fc51c29ce8fdfcba0dcd0f1d329fe0868a62eb54
 
 ul {
     /*overflow: hidden;*/
