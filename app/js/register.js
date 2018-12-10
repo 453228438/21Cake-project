@@ -53,6 +53,7 @@ var register = (function() {
                     if (this.value == '') {
                         that.$txt.style.color = '#ff714d';
                         that.$txt.innerHTML = '输入不能为空';
+                        this.classList.remove('suc');
                     } else {
                         var bool = checkInput[this.name](this.value);
                         if (bool) {
@@ -63,6 +64,7 @@ var register = (function() {
                         } else {
                             that.$txt.style.color = '#ff714d';
                             that.$txt.innerHTML = '您的输入有误';
+                            this.classList.remove('suc');
                         }
                     }
                 }
@@ -70,7 +72,7 @@ var register = (function() {
             phone.onchange = function() {
                 console.log(this.value);
                 var obj = {
-                    // method: 'POST',
+                    //method: 'POST',
                     data: {
                         phone: this.value
                     },
@@ -80,6 +82,7 @@ var register = (function() {
                         if (data.code == '10000') {
                             that.$txt.style.color = '#ff714d';
                             that.$txt.innerHTML = '手机号已存在';
+                            phone.classList.remove('suc');
                         } else if (data.code == '0') {
                             that.$txt.style.color = 'green';
                             that.$txt.innerHTML = '手机号可以使用';
@@ -96,6 +99,7 @@ var register = (function() {
                 if (this.value == '') {
                     that.$txt.style.color = '#ff714d';
                     that.$txt.innerHTML = '输入不能为空';
+                    this.classList.remove('suc');
                 } else {
                     var bool = that.checkInput2(this.value);
                     if (bool) {
@@ -105,6 +109,7 @@ var register = (function() {
                     } else {
                         that.$txt.style.color = '#ff714d';
                         that.$txt.innerHTML = '您的输入有误';
+                        this.classList.remove('suc');
                         this.onfocus = function() { //如果输入有误，重新获取焦点后刷新字符图片
                             that.setRanNum();
                         }
@@ -112,11 +117,13 @@ var register = (function() {
                 }
             }
             this.$ifm.onclick = function() { //点击按钮后发送四位数的验证码，请在控制台查看
-                that.setRaninformation();
+                if (this.disabled != 'disabled') {
+                    that.setRaninformation();
+                }
+                this.disabled = 'disabled'; //开启禁用模式
                 var times = 30; //限时30秒
                 var sec = setInterval(function() {
                     that.$ifm.innerHTML = "短信已发送（" + --times + "）"; //倒计时
-                    that.$ifm.disabled = true; //开启禁用模式
                     that.$ifm.style.color = '#ccc';
                     that.$ifm.style.cursor = 'default';
                     if (times < 0) { //当时间数完后
@@ -131,6 +138,7 @@ var register = (function() {
                 if (this.value == '') {
                     that.$txt.style.color = '#ff714d';
                     that.$txt.innerHTML = '输入不能为空';
+                    this.classList.remove('suc');
                 } else {
                     var bool = that.checkInput3(this.value);
                     if (bool) {
@@ -140,6 +148,7 @@ var register = (function() {
                     } else {
                         that.$txt.style.color = '#ff714d';
                         that.$txt.innerHTML = '您的输入有误';
+                        this.classList.remove('suc');
                     }
                 }
             }
@@ -154,6 +163,7 @@ var register = (function() {
                 } else {
                     that.$txt.style.color = '#ff714d';
                     that.$txt.innerHTML = '您两次的密码不一致';
+                    this.classList.remove('suc');
                 }
             }
             this.$regBtn.onclick = function() { //点击注册按钮时，
@@ -170,6 +180,7 @@ var register = (function() {
                 if (this.value == '') {
                     that.$txt.style.color = '#ff714d';
                     that.$txt.innerHTML = '输入不能为空';
+                    this.classList.remove('suc');
                 } else {
                     that.$txt.style.color = 'green';
                     that.$txt.innerHTML = '验证成功';

@@ -1,39 +1,53 @@
 /***********banner图***********/
+
 .banner {
     height: 480px;
-    background-color: pink;
+    /* background-color: pink; */
     width: 100%;
     min-width: 980px;
     position: relative;
 }
+
 .bannerBox {
     position: relative;
     width: 100%;
     /*min-width: 980px;*/
     height: 480px;
 }
+
 .bannerBox li {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 480px;
+    display: none;
 }
-.bannerBox li:nth-child(1){
-    z-index: 5;
+
+.bannerBox li:nth-child(1) {
+    /* z-index: 5; */
+    display: block;
 }
-.bannerBox li:nth-child(2){
-    z-index: 4;
-}
-.bannerBox li:nth-child(3){
+
+
+/* .bannerBox li:nth-child(2) {
+    /* z-index: 4; */
+
+
+/* } */
+
+
+/* .bannerBox li:nth-child(3) {
     z-index: 3;
 }
-.bannerBox li:nth-child(4){
+
+.bannerBox li:nth-child(4) {
     z-index: 2;
 }
-.bannerBox li:nth-child(5){
+
+.bannerBox li:nth-child(5) {
     z-index: 1;
-}
+} */
 
 .banner .bannerBox li a {
     display: block;
@@ -43,31 +57,37 @@
     /*-webkit-background-size: auto auto;*/
     /*background-size: auto auto;*/
 }
-.bannerBox li a:nth-child(1){
+
+.bannerBox li:nth-child(1) a {
     background: url("../images/cake1.jpg") no-repeat;
     -webkit-background-size: cover;
     background-size: cover;
 }
-.bannerBox li a:nth-child(2){
+
+.bannerBox li:nth-child(2) a {
     background: url("../images/cake2.jpg") no-repeat;
     -webkit-background-size: cover;
     background-size: cover;
 }
-.bannerBox li a:nth-child(3){
+
+.bannerBox li:nth-child(3) a {
     background: url("../images/cake3.jpg") no-repeat;
     -webkit-background-size: cover;
     background-size: cover;
 }
-.bannerBox li a:nth-child(4){
+
+.bannerBox li:nth-child(4) a {
     background: url("../images/cake4.jpg") no-repeat;
     -webkit-background-size: cover;
     background-size: cover;
 }
-.bannerBox li a:nth-child(5){
+
+.bannerBox li:nth-child(5) a {
     background: url("../images/cake5.jpg") no-repeat;
     -webkit-background-size: cover;
     background-size: cover;
 }
+
 .banner .smallBtn {
     width: 90px;
     height: 10px;
@@ -79,6 +99,7 @@
     justify-content: space-around;
     z-index: 10;
 }
+
 .smallBtn li {
     width: 10px;
     height: 10px;
@@ -86,14 +107,19 @@
     background-color: #fff;
     cursor: pointer;
 }
+
 .smallBtn .thisBtn {
     background-color: #442818;
 }
+
+
 /***********首页大选项***********/
+
 .jump {
     height: 169px;
     background-color: #fff;
 }
+
 .jumpInner {
     height: 169px;
     background-color: #fefefe;
@@ -104,6 +130,7 @@
     padding-left: 50px;
     width: 1140px;
 }
+
 .jumpInner a {
     display: block;
     float: left;
@@ -111,20 +138,26 @@
     width: 200px;
     height: 100px;
     border-radius: 8px;
-    box-shadow: 0 2px 6px 0 rgba(0,0,0,0.06);
+    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.06);
 }
-.jumpInner a:nth-child(1){
+
+.jumpInner a:nth-child(1) {
     /*margin-left: 42px;*/
 }
-.jumpInner a:hover{
+
+.jumpInner a:hover {
     opacity: 0.8;
 }
+
+
 /***********新品蛋糕***********/
+
 .new {
     height: 317px;
     background-color: #fff;
     margin-bottom: 20px;
 }
+
 .newInner {
     height: 299px;
     background-color: #fff;
@@ -132,6 +165,7 @@
     padding-left: 50px;
     width: 1140px;
 }
+
 .newInner h2 {
     height: 54px;
     font-size: 27px;
@@ -139,24 +173,31 @@
     color: #724228;
     font-weight: normal;
 }
+
 .newInner h2 span {
     font-size: 14px;
 }
+
 .newInner a {
     display: block;
     width: 1140px;
     height: 225px;
     margin-top: 20px;
 }
+
 .newInner a img {
     width: 1140px;
     height: 225px;
 }
+
+
 /***********新品蛋糕列表***********/
+
 .newcake_list {
     height: 397px;
     background-color: #fff;
 }
+
 .newcake_listInner {
     height: 397px;
     background-color: #fff;
@@ -165,12 +206,14 @@
     display: flex;
     justify-content: space-between;
 }
+
 .newcake_listInner ul {
     width: 1140px;
     height: 397px;
     display: flex;
     justify-content: space-between;
 }
+
 .newcake_listInner ul li {
     float: left;
     width: 263px;
@@ -178,7 +221,8 @@
     background-color: #fff;
     border-radius: 8px;
 }
-.newcake_listInner ul li .a_img{
+
+.newcake_listInner ul li .a_img {
     display: block;
     width: 263px;
     height: 230px;
@@ -186,12 +230,14 @@
     border-radius: 8px;
     margin-bottom: 10px;
 }
+
 .newcake_listInner ul li .cakeName {
     width: 100%;
     height: 97px;
     border-bottom: 1px dashed #d5bfa7;
     margin-bottom: 14px;
 }
+
 .newcake_listInner ul li .cakeName h4 a {
     display: block;
     font-size: 14px;
@@ -199,6 +245,7 @@
     line-height: 23px;
     color: #000;
 }
+
 .newcake_listInner ul li .cakeName p a {
     display: block;
     width: 100%;
@@ -207,11 +254,13 @@
     font-size: 14px;
     color: #616161;
 }
+
 .newcake_listInner ul li .cakeName .threeBtn {
     width: 259px;
     height: 40px;
     padding-left: 4px;
 }
+
 .newcake_listInner ul li .cakeName .threeBtn a {
     display: block;
     float: left;
@@ -225,10 +274,12 @@
     line-height: 17px;
     font-size: 12px;
 }
+
 .newcake_listInner ul li .buy {
     width: 100%;
     height: 21px;
 }
+
 .newcake_listInner ul li .buy .buyBtn {
     float: right;
     width: 80px;
@@ -238,6 +289,7 @@
     cursor: pointer;
     vertical-align: bottom;
 }
+
 .newcake_listInner ul li .buy span {
     display: block;
     float: left;
@@ -247,12 +299,16 @@
     color: #c19788;
     vertical-align: bottom;
 }
+
+
 /***********生日蛋糕***********/
+
 .birth {
     height: 317px;
     background-color: #fff;
     margin-bottom: 20px;
 }
+
 .birthInner {
     height: 299px;
     background-color: #fff;
@@ -260,6 +316,7 @@
     padding-left: 50px;
     width: 1140px;
 }
+
 .birthInner h2 {
     height: 54px;
     font-size: 27px;
@@ -267,24 +324,31 @@
     color: #724228;
     font-weight: normal;
 }
+
 .birthInner h2 span {
     font-size: 14px;
 }
+
 .birthInner a {
     display: block;
     width: 1140px;
     height: 225px;
     margin-top: 20px;
 }
+
 .birthInner a img {
     width: 1140px;
     height: 225px;
 }
+
+
 /***********生日蛋糕列表***********/
+
 .birthcake_list {
     height: 397px;
     background-color: #fff;
 }
+
 .birthcake_listInner {
     height: 397px;
     background-color: #fff;
@@ -293,12 +357,14 @@
     display: flex;
     justify-content: space-between;
 }
+
 .birthcake_listInner ul {
     width: 1140px;
     height: 397px;
     display: flex;
     justify-content: space-between;
 }
+
 .birthcake_listInner ul li {
     float: left;
     width: 263px;
@@ -306,7 +372,8 @@
     background-color: #fff;
     border-radius: 8px;
 }
-.birthcake_listInner ul li .a_img{
+
+.birthcake_listInner ul li .a_img {
     display: block;
     width: 263px;
     height: 230px;
@@ -314,12 +381,14 @@
     border-radius: 8px;
     margin-bottom: 10px;
 }
+
 .birthcake_listInner ul li .cakeName {
     width: 100%;
     height: 97px;
     border-bottom: 1px dashed #d5bfa7;
     margin-bottom: 14px;
 }
+
 .birthcake_listInner ul li .cakeName h4 a {
     display: block;
     font-size: 14px;
@@ -327,6 +396,7 @@
     line-height: 23px;
     color: #000;
 }
+
 .birthcake_listInner ul li .cakeName p a {
     display: block;
     width: 100%;
@@ -335,11 +405,13 @@
     font-size: 14px;
     color: #616161;
 }
+
 .birthcake_listInner ul li .cakeName .threeBtn {
     width: 259px;
     height: 40px;
     padding-left: 4px;
 }
+
 .birthcake_listInner ul li .cakeName .threeBtn a {
     display: block;
     float: left;
@@ -353,10 +425,12 @@
     line-height: 17px;
     font-size: 12px;
 }
+
 .birthcake_listInner ul li .buy {
     width: 100%;
     height: 21px;
 }
+
 .birthcake_listInner ul li .buy .buyBtn {
     float: right;
     width: 80px;
@@ -366,6 +440,7 @@
     cursor: pointer;
     vertical-align: bottom;
 }
+
 .birthcake_listInner ul li .buy span {
     display: block;
     float: left;
@@ -375,12 +450,16 @@
     color: #c19788;
     vertical-align: bottom;
 }
+
+
 /***********儿童蛋糕***********/
+
 .child {
     height: 317px;
     background-color: #fff;
     margin-bottom: 20px;
 }
+
 .childInner {
     height: 299px;
     background-color: #fff;
@@ -388,6 +467,7 @@
     padding-left: 50px;
     width: 1140px;
 }
+
 .childInner h2 {
     height: 54px;
     font-size: 27px;
@@ -395,24 +475,31 @@
     color: #724228;
     font-weight: normal;
 }
+
 .childInner h2 span {
     font-size: 14px;
 }
+
 .childInner a {
     display: block;
     width: 1140px;
     height: 225px;
     margin-top: 20px;
 }
+
 .childInner a img {
     width: 1140px;
     height: 225px;
 }
+
+
 /***********儿童蛋糕列表***********/
+
 .childcake_list {
     height: 397px;
     background-color: #fff;
 }
+
 .childcake_listInner {
     height: 397px;
     background-color: #fff;
@@ -421,12 +508,14 @@
     display: flex;
     justify-content: space-between;
 }
+
 .childcake_listInner ul {
     width: 1140px;
     height: 397px;
     display: flex;
     justify-content: space-between;
 }
+
 .childcake_listInner ul li {
     float: left;
     width: 263px;
@@ -434,7 +523,8 @@
     background-color: #fff;
     border-radius: 8px;
 }
-.childcake_listInner ul li .a_img{
+
+.childcake_listInner ul li .a_img {
     display: block;
     width: 263px;
     height: 230px;
@@ -442,12 +532,14 @@
     border-radius: 8px;
     margin-bottom: 10px;
 }
+
 .childcake_listInner ul li .cakeName {
     width: 100%;
     height: 97px;
     border-bottom: 1px dashed #d5bfa7;
     margin-bottom: 14px;
 }
+
 .childcake_listInner ul li .cakeName h4 a {
     display: block;
     font-size: 14px;
@@ -455,6 +547,7 @@
     line-height: 23px;
     color: #000;
 }
+
 .childcake_listInner ul li .cakeName p a {
     display: block;
     width: 100%;
@@ -463,11 +556,13 @@
     font-size: 14px;
     color: #616161;
 }
+
 .childcake_listInner ul li .cakeName .threeBtn {
     width: 259px;
     height: 40px;
     padding-left: 4px;
 }
+
 .childcake_listInner ul li .cakeName .threeBtn a {
     display: block;
     float: left;
@@ -481,10 +576,12 @@
     line-height: 17px;
     font-size: 12px;
 }
+
 .childcake_listInner ul li .buy {
     width: 100%;
     height: 21px;
 }
+
 .childcake_listInner ul li .buy .buyBtn {
     float: right;
     width: 80px;
@@ -494,6 +591,7 @@
     cursor: pointer;
     vertical-align: bottom;
 }
+
 .childcake_listInner ul li .buy span {
     display: block;
     float: left;
@@ -503,12 +601,16 @@
     color: #c19788;
     vertical-align: bottom;
 }
+
+
 /***********聚会蛋糕***********/
+
 .party {
     height: 317px;
     background-color: #fff;
     margin-bottom: 20px;
 }
+
 .partyInner {
     height: 299px;
     background-color: #fff;
@@ -516,6 +618,7 @@
     padding-left: 50px;
     width: 1140px;
 }
+
 .partyInner h2 {
     height: 54px;
     font-size: 27px;
@@ -523,24 +626,31 @@
     color: #724228;
     font-weight: normal;
 }
+
 .partyInner h2 span {
     font-size: 14px;
 }
+
 .partyInner a {
     display: block;
     width: 1140px;
     height: 225px;
     margin-top: 20px;
 }
+
 .partyInner a img {
     width: 1140px;
     height: 225px;
 }
+
+
 /***********聚会蛋糕列表***********/
+
 .partycake_list {
     height: 397px;
     background-color: #fff;
 }
+
 .partycake_listInner {
     height: 397px;
     background-color: #fff;
@@ -549,12 +659,14 @@
     display: flex;
     justify-content: space-between;
 }
+
 .partycake_listInner ul {
     width: 1140px;
     height: 397px;
     display: flex;
     justify-content: space-between;
 }
+
 .partycake_listInner ul li {
     float: left;
     width: 263px;
@@ -562,7 +674,8 @@
     background-color: #fff;
     border-radius: 8px;
 }
-.partycake_listInner ul li .a_img{
+
+.partycake_listInner ul li .a_img {
     display: block;
     width: 263px;
     height: 230px;
@@ -570,12 +683,14 @@
     border-radius: 8px;
     margin-bottom: 10px;
 }
+
 .partycake_listInner ul li .cakeName {
     width: 100%;
     height: 97px;
     border-bottom: 1px dashed #d5bfa7;
     margin-bottom: 14px;
 }
+
 .partycake_listInner ul li .cakeName h4 a {
     display: block;
     font-size: 14px;
@@ -583,6 +698,7 @@
     line-height: 23px;
     color: #000;
 }
+
 .partycake_listInner ul li .cakeName p a {
     display: block;
     width: 100%;
@@ -591,11 +707,13 @@
     font-size: 14px;
     color: #616161;
 }
+
 .partycake_listInner ul li .cakeName .threeBtn {
     width: 259px;
     height: 40px;
     padding-left: 4px;
 }
+
 .partycake_listInner ul li .cakeName .threeBtn a {
     display: block;
     float: left;
@@ -609,10 +727,12 @@
     line-height: 17px;
     font-size: 12px;
 }
+
 .partycake_listInner ul li .buy {
     width: 100%;
     height: 21px;
 }
+
 .partycake_listInner ul li .buy .buyBtn {
     float: right;
     width: 80px;
@@ -622,6 +742,7 @@
     cursor: pointer;
     vertical-align: bottom;
 }
+
 .partycake_listInner ul li .buy span {
     display: block;
     float: left;
@@ -631,12 +752,16 @@
     color: #c19788;
     vertical-align: bottom;
 }
+
+
 /***********活动门***********/
+
 .door {
     height: 345px;
     background-color: #fff;
     margin-bottom: 20px;
 }
+
 .doorInner {
     height: 325px;
     background-color: #fff;
@@ -644,6 +769,7 @@
     padding-left: 50px;
     width: 1140px;
 }
+
 .doorInner h2 {
     height: 54px;
     font-size: 27px;
@@ -651,25 +777,32 @@
     color: #724228;
     font-weight: normal;
 }
+
 .doorInner h2 span {
     font-size: 14px;
 }
+
 .doorInner a {
     display: block;
     width: 542px;
     height: 252px;
     margin-top: 20px;
 }
+
 .doorInner a img {
     width: 542px;
     height: 252px;
 }
+
+
 /***********文章***********/
+
 .note {
     height: 545px;
     background-color: #fff;
     margin-bottom: 20px;
 }
+
 .noteInner {
     height: 525px;
     background-color: #fff;
@@ -677,6 +810,7 @@
     padding-left: 50px;
     width: 1140px;
 }
+
 .noteInner h2 {
     height: 54px;
     font-size: 27px;
@@ -684,9 +818,11 @@
     color: #724228;
     font-weight: normal;
 }
+
 .noteInner h2 span {
     font-size: 14px;
 }
+
 .noteInner h2 i {
     font-style: normal;
     float: right;
@@ -695,6 +831,7 @@
     margin-right: 40px;
     color: #aa5d43;
 }
+
 .noteInner a {
     display: block;
     width: 542px;
@@ -703,14 +840,16 @@
     float: left;
     margin-right: 16px;
     border-radius: 5px;
-    box-shadow: 0 0 6px 0 rgba(0,0,0,0.10);
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.10);
 }
+
 .noteInner a img {
     width: 542px;
     height: 252px;
     border-radius: 5px 5px 0 0;
     display: block;
 }
+
 .noteInner a span {
     display: block;
     height: 70px;
@@ -719,15 +858,18 @@
     padding-left: 17px;
     padding-right: 18px;
 }
+
 .noteInner a span i {
     font-style: normal;
     vertical-align: bottom;
 }
+
 .noteInner a span .i_left {
     float: left;
     font-size: 24px;
     color: #000;
 }
+
 .noteInner a span .i_right {
     float: right;
     font-size: 12px;

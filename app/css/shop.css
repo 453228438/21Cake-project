@@ -1,0 +1,12 @@
+.shopHead {
+    height: 116px;
+    background-color: #fff;
+    margin-top: 104px;
+}
+
+.shopHeadInner {
+    border-bottom: 1px solid #f2f2f2;
+    border-top: 1px solid #f2f2f2;
+    height: 116px;
+    background-color: #fff;
+}
