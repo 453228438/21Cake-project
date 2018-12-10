@@ -1,4 +1,5 @@
 <?php
+     header('Access-Control-Allow-Origin:*');
     header("Content-type:text/html;charset=UTF-8");
     $password = $_GET["password"];
     $coon = new mysqli('localhost', 'root', '', '21cake', 3306);//连接数据库

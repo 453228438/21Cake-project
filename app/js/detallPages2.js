@@ -42,15 +42,21 @@ var Data = (function () {
             $('.main-right .details-img-box').children('span').eq(1).children('span').html(data[1].share)
             $('.main-right .details-img-box').children('span').eq(2).children('span').html(data[1].tableware)
             $('.main-right .details-img-box').children('span').eq(3).children('span').html(data[1].time)
-            console.log($('div.number'))
             $('div.number').css({
                 cursor: 'pointer'
             })
-            console.log($('i.canju'))
             $('i.canju').css({
                 'backgroundImage': 'url(http://localhost:8887/21Cake-project/app/font/canju.png)'
             })
             $('.money').remove()
+            $('.options .shop-size').append(`<div class="number"><i class="iconfont icon-chenggong"></i><span> 一份</span></div>
+            <div class="number"><i class="iconfont icon-chenggong"></i><span> 一份</span></div>
+            <div class="number"><i class="iconfont icon-chenggong"></i><span> 一份</span></div>
+            <div class="number"><i class="iconfont icon-chenggong"></i><span> 一份</span></div>`)
+            $('.main-right .shop-size').append(`<div class="number"><i class="iconfont icon-chenggong"></i><span> 一份</span></div>
+            <div class="number"><i class="iconfont icon-chenggong"></i><span> 一份</span></div>
+            <div class="number"><i class="iconfont icon-chenggong"></i><span> 一份</span></div>
+            <div class="number"><i class="iconfont icon-chenggong"></i><span> 一份</span></div>`)
             $('div.number').eq(0).html(data[1].kg1)
             $('div.number').eq(1).html(data[1].kg2)
             $('div.number').eq(2).html(data[1].kg3)

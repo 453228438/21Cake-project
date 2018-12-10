@@ -70,8 +70,8 @@ gulp.task('minihtml', function () {
 })
 gulp.task('connect', function () {
     connect.server({
-        root: 'dist',
-        port: '8887',
-        livereload: true
+        root: 'app',
+        port: '8888',
+        livereload: true,
     });
 })
