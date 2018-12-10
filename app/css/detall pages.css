@@ -1,0 +1,562 @@
+.details-nav {
+    width: 100%;
+    height: 70px;
+    background-color: #fff;
+    position: fixed;
+    left: 0;
+    top: 0;
+    box-shadow: 0px 2px 4px 0px rgba(196, 196, 196, 0.50);
+    z-index: 50;
+}
+
+.details-nav .left {
+    color: #684029;
+    font-size: 20px;
+    float: left;
+    line-height: 30px;
+    margin-top: 20px;
+    margin-left: 32px;
+}
+
+.details-nav .right {
+    float: right;
+    font-size: 20px;
+    color: #684029;
+    line-height: 30px;
+    margin-top: 20px;
+}
+
+.details-nav .money {
+    float: right;
+    color: #b2b2b2;
+    text-decoration: line-through;
+    margin-left: 5px;
+    font-size: 10px;
+    position: relative;
+    bottom: 2px;
+    margin-top: 30px;
+}
+
+.details-nav a {
+    text-decoration: none;
+    float: right;
+    display: block;
+    width: 30px;
+    height: 50px;
+    margin-top: 20px;
+    margin-right: 32px;
+}
+
+.details-nav a i {
+    font-size: 28px;
+    color: #684029;
+}
+
+.options {
+    position: fixed;
+    height: 216px;
+    width: 515px;
+    padding-top: 0px;
+    margin-top: 0px;
+    padding-bottom: 30px;
+    margin-bottom: 0px;
+    z-index: 40;
+    top: 70px;
+    right: 30px;
+    padding: 0 20px 30px;
+    margin-left: 55px;
+    overflow: hidden;
+    background: #fff;
+    display: block;
+    border: 1px solid #F0F0F0;
+    box-shadow: 0px 2px 4px 0px rgba(237, 237, 237, 0.50);
+}
+
+.options .details-img-box {
+    margin-top: 28px;
+    height: 80px;
+    padding-bottom: 10px;
+}
+
+.options .details-img-box span {
+    float: left;
+    height: 25px;
+    line-height: 20px;
+    margin: 5px 0;
+    margin-right: 8px;
+    font-size: 12px;
+    color: #684029;
+    display: flex;
+    align-items: center;
+}
+
+.options .details-img-box span:nth-child(1) i {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    background-image: url(../font/chengzhong.png);
+    background-size: 100%;
+    margin-right: 3px;
+
+}
+
+.options .details-img-box span:nth-child(2) .icon-pengyoufill {
+    font-size: 20px;
+    color: #684029;
+    margin-right: 3px;
+}
+
+.options .details-img-box span:nth-child(3) i {
+    width: 10px;
+    height: 18px;
+    display: inline-block;
+    margin-right: 2px;
+}
+
+.options .details-img-box span:nth-child(4) .icon-shizhongfill {
+    font-size: 20px;
+    color: #684029;
+    margin-right: 3px;
+}
+
+.options .shop-size {
+    font-size: 12px;
+    color: #684029;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.options .shop-size p {
+    float: left;
+}
+
+.options .shop-size .number {
+    float: left;
+    width: 60px;
+    height: 30px;
+    margin-left: 18px;
+    box-sizing: border-box;
+    border: 1px solid #684029;
+    font-size: 12px;
+    color: #684029;
+    text-align: center;
+    line-height: 28px;
+    position: relative;
+}
+
+.options .shop-size .number .icon-chenggong {
+    line-height: 14px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #684029;
+    font-size: 14px;
+}
+
+.options .btn-left {
+    width: 238px;
+    height: 40px;
+    background-color: #f4f4f4;
+    font-size: 12px;
+    color: #684029;
+    border: 0;
+    outline: none;
+    cursor: pointer;
+    margin-right: 30px;
+}
+
+.options .btn-right {
+    width: 238px;
+    height: 40px;
+    background-color: #684029;
+    font-size: 12px;
+    color: #fff;
+    border: 0;
+    outline: none;
+    cursor: pointer;
+}
+
+#wrapper-banner {
+    width: 100%;
+    height: 520px;
+    padding-top: 90px;
+}
+
+.content {
+    width: 1050px;
+    margin: auto;
+    position: relative;
+}
+
+#wrapper-banner .banner {
+    height: 520px;
+}
+
+#wrapper-banner .banner .big-banner {
+    width: 924px;
+    height: 520px;
+    float: left;
+    /* background-image: url(../images/beihaidao-tusi.jpg); */
+    background-size: 100%;
+}
+
+#wrapper-banner .banner .min-banner {
+    width: 90px;
+    max-height: 280px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin-right: 20px;
+}
+
+#wrapper-banner .banner .min-banner div {
+    width: 90px;
+    height: 50px;
+    box-sizing: border-box;
+    border: 1px solid #C69C6D;
+    margin-top: 20px;
+    cursor: pointer;
+    background-size: 100%;
+}
+
+#wrapper-banner .banner .min-banner .img2 {
+    background-size: 100%;
+}
+
+#wrapper-banner .banner .min-banner .img3 {
+    background-size: 100%;
+}
+
+#warpper-main {
+    height: auto;
+}
+
+#warpper-main .main {
+    display: flex;
+    height: auto;
+    border-bottom: #D8D8D8 solid 1px;
+    justify-content: space-between;
+}
+
+/* #warpper-main .content {} */
+#warpper-main .main .main-left {
+    width: 485px;
+    height: auto;
+    padding-bottom: 10px;
+}
+
+#warpper-main .main .main-right {
+    width: 500px;
+    height: auto;
+}
+
+#warpper-main .main .main-left h1 {
+    font-size: 18px;
+    color: #684029;
+    font-weight: normal;
+    margin-bottom: 32px;
+    margin-top: 20px;
+}
+
+#warpper-main .main .main-left p {
+    height: auto;
+    margin-bottom: 20px;
+}
+
+#warpper-main .main .main-left p a {
+    display: inline-block;
+    line-height: 18px;
+    color: #D5BFA7;
+    padding: 0 10px;
+    border: 1px solid #D5BFA7;
+    border-radius: 100px;
+    margin-right: 6px;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+#warpper-main .main .main-left .mikl {
+    width: 110px;
+    height: 34px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    color: #684029;
+    margin-bottom: 20px;
+}
+
+#warpper-main .main .main-left .mikl i {
+    width: 24px;
+    height: 34px;
+    display: inline-block;
+    background-image: url(../font/naiyou.png);
+    margin-right: 18px;
+}
+
+#warpper-main .main .main-left h3 {
+    font-size: 12px;
+    color: #684029;
+    line-height: 2em;
+    font-weight: normal;
+}
+
+#warpper-main .main .main-right .details-img-box {
+    margin-top: 18px;
+    height: 50px;
+    padding-bottom: 10px;
+}
+
+#warpper-main .main .main-right .details-img-box span:nth-child(1) i {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    background-image: url(../font/chengzhong.png);
+    background-size: 100%;
+    margin-right: 3px;
+
+}
+
+#warpper-main .main .main-right .details-img-box span:nth-child(3) i {
+    width: 10px;
+    height: 18px;
+    display: inline-block;
+}
+
+#warpper-main .main .main-right .details-img-box span {
+    float: left;
+    height: 25px;
+    line-height: 20px;
+    margin: 5px 0;
+    margin-right: 15px;
+    font-size: 12px;
+    color: #684029;
+    display: flex;
+    align-items: center
+}
+
+#warpper-main .main .main-right .money {
+    float: left;
+    color: #684029;
+    text-decoration: line-through;
+    margin-left: 5px;
+    font-size: 10px;
+    position: relative;
+    bottom: 2px;
+    margin-top: 10px;
+}
+
+#warpper-main .main .main-right .right {
+    float: left;
+    font-size: 20px;
+    color: #c69c6d;
+    line-height: 30px;
+    margin-bottom: 20px;
+}
+
+#warpper-main .main .main-right .shop-size {
+    width: 100%;
+    font-size: 12px;
+    color: #684029;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+#warpper-main .main .main-right .shop-size .number {
+    width: 60px;
+    height: 30px;
+    margin-left: 18px;
+    box-sizing: border-box;
+    border: 1px solid #684029;
+    font-size: 12px;
+    color: #684029;
+    text-align: center;
+    line-height: 28px;
+    position: relative;
+}
+
+#warpper-main .main .main-right .shop-size .number .icon-chenggong {
+    line-height: 14px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #684029;
+    font-size: 14px;
+}
+
+#warpper-main .main .main-right .btn-left {
+    border: 0;
+    width: 166px;
+    height: 30px;
+    background-color: #f4f4f4;
+    font-size: 14px;
+    color: #684029;
+    outline: none;
+}
+
+#warpper-main .main .main-right .btn-right {
+    border: 0;
+    width: 166px;
+    height: 30px;
+    background-color: #7a5844;
+    font-size: 14px;
+    color: #f4f4f4;
+    margin-left: 10px;
+    outline: none;
+}
+
+#wrapper-showimage {
+    margin-top: 12px;
+    height: auto;
+}
+
+#wrapper-showimage .showimage {
+    margin-top: 12px;
+    height: auto;
+}
+
+#wrapper-showimage .content {
+    width: 1050px;
+    margin: auto;
+}
+
+#wrapper-showimage .showimage img {
+    display: block;
+    max-width: 100%;
+    border: none;
+}
+
+.recommend-list {
+    width: 1050px;
+    box-sizing: border-box;
+    margin: 40px auto 50px;
+    border: 1px solid #E1E1E1;
+    margin: auto;
+    margin-top: 40px;
+    margin-bottom: 100px;
+}
+
+.recommend-list h2 {
+    background: #FBFBFB;
+    font-size: 14px;
+    line-height: 40px;
+    padding-left: 18px;
+    font-weight: normal;
+}
+
+.recommend-list ul {
+    height: 285px;
+    margin: 0 18px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.recommend-list ul li {
+    width: 180px;
+    height: 242px;
+    margin: 20px 25px;
+    text-align: center;
+}
+
+.recommend-list ul li .list {
+    display: block;
+    width: 180px;
+    height: 242px;
+    position: relative;
+    font-weight: normal;
+    border: none;
+
+}
+
+.recommend-list ul li .list .cart {
+    position: absolute;
+    background: #b9a57e;
+    opacity: 0;
+    top: 148px;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    font-size: 12px;
+    font-weight: normal;
+    transition: all 0.6s ease-in-out;
+}
+
+.recommend-list ul li .list:hover .cart {
+    opacity: 0.7;
+}
+
+.recommend-list ul li .list .cart p {
+    color: #fff;
+    font-size: 12px;
+    font-weight: normal;
+    line-height: 17px;
+    width: 128px;
+    height: 34px;
+    padding-top: 9px;
+    margin-left: 10px;
+    overflow: hidden;
+    float: left;
+    text-align: left;
+}
+
+.recommend-list ul li .list .cart .btn-car {
+    height: 30px;
+    width: 30px;
+    background: #fff;
+    float: left;
+    margin-top: 10px;
+    margin-left: 4px;
+    border: none;
+    outline: none;
+}
+
+.recommend-list ul li .list .cart .btn-car i {
+    font-size: 20px;
+    color: #684029;
+    height: 20px;
+    width: 20px;
+    display: block;
+    margin-left: 4px;
+    margin-top: 1px;
+}
+
+.recommend-list ul li .list .img {
+    display: block;
+    width: 180px;
+    height: 198px;
+    background-image: url(../images/birthCake1.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.recommend-list ul li:nth-child(2) .list .img {
+    background-image: url(../images/birthCake2.png);
+}
+
+.recommend-list ul li:nth-child(3) .list .img {
+    background-image: url(../images/birthCake3.png);
+}
+
+.recommend-list ul li .list:nth-child(4) .img {
+    background-image: url(../images/birthCake4.png);
+}
+
+.recommend-list ul li .list h4 {
+    font-size: 14px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: #8B663C;
+    font-weight: normal;
+    margin-bottom: 3px;
+    margin-top: 3px;
+}
+
+.recommend-list ul li .list p {
+    font-size: 14px;
+    color: #CBA375;
+}
