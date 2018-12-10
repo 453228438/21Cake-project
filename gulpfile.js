@@ -11,16 +11,18 @@ var collector = require("gulp-rev-collector") //替换版本
 // var minify = require('gulp-minify');
 const rev = require('gulp-rev') //添加后缀名
 var runSequence = require('run-sequence');
-
+var sass = require('gulp-sass');
+sass.compiler = require('node-sass');
 // gulp.task('default', ['minijs', 'minicss', 'minihtml', 'watch', 'connect']);
-gulp.task('default', function (callback) {
-    runSequence('build-clean',
-        ['minijs', 'minicss'],
-        'minihtml',
-        'watch',
-        'connect',
-        callback);
-});
+// gulp.task('default', function (callback) {
+//     runSequence('build-clean',
+//         ['minijs', 'minicss'],
+//         'minihtml',
+//         'watch',
+//         'connect',
+//         callback);
+// });
+
 gulp.task('minijs', function () { //压缩并合并js
     gulp.src('app/app2/*.js')
         .pipe(babel({
@@ -68,10 +70,19 @@ gulp.task('minihtml', function () {
         .pipe(gulp.dest('dist'))
         .pipe(connect.reload())
 })
+gulp.task('all', function () {
+    gulp.src('app/**/*.*')
+        .pipe(gulp.dest('dist'))
+        .pipe(connect.reload())
+})
 gulp.task('connect', function () {
     connect.server({
-        root: '21Cake-project',
+        root: 'dist',
         port: '8888',
         livereload: true
     });
 })
+gulp.task('watch', function () {
+    gulp.watch('app/**/*.*', ['all'])
+})
+gulp.task('default', ['all', 'watch', 'connect'])
