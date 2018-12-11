@@ -70,7 +70,11 @@ gulp.task('minihtml', function() {
 gulp.task('connect', function() {
     connect.server({
         root: '21Cake-project',
+<<<<<<< HEAD
         port: '3333',
+=======
+        port: '8888',
+>>>>>>> 83695fd62a4519afc66f25e99312b30ac0fc82a6
         livereload: true
     });
 })
