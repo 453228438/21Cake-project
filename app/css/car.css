@@ -1,33 +1,44 @@
 .car_main {
-    height: 875px;
+    height: auto;
     background-color: #fff;
     /*margin-top: 80px;*/
 }
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
 .car_main .mainInner {
-    height: 335px;
+    height: auto;
     padding-top: 200px;
 }
+
 .car_main .mainInner .emptyCar {
     display: block;
     width: 204px;
     height: 116px;
     margin: 0 auto;
 }
+
 .car_main .mainInner p {
     text-align: center;
     font-size: 14px;
     color: #e7cda7;
     margin-bottom: 28px;
 }
+
 .car_main .mainInner a {
     display: block;
     text-align: center;
     color: #684029;
     font-size: 12px;
 }
+
 .car_main .mainInner a:hover {
     color: #bc9677;
 }
+
 .car_main h2 {
     height: 49px;
     font-size: 18px;
@@ -35,6 +46,7 @@
     color: #684029;
     font-weight: normal;
 }
+
 .car_main .cakes {
     width: 100%;
     height: 267px;
@@ -42,10 +54,246 @@
     display: flex;
     padding-top: 22px;
 }
+
 .car_main .cakes a {
     flex: 1;
 }
+
 .car_main .cakes a img {
     width: 255px;
     height: 255px;
+}
+
+table {
+    width: 1195px;
+    border-collapse: collapse;
+    border-spacing: 0;
+    margin-top: 30px;
+}
+
+table tr {
+    box-sizing: border-box;
+    width: 1195px;
+    height: 134px;
+    display: table-row;
+    vertical-align: inherit;
+    border-color: inherit;
+    border: 1px solid #e1e1e1;
+    border-bottom: 0;
+}
+
+table tr:last-child {
+    box-sizing: border-box;
+    border: 1px solid #e1e1e1;
+}
+
+table tr td:nth-child(1) {
+    box-sizing: border-box;
+    width: 134px;
+}
+
+table tr td:nth-child(1) a {
+    display: block;
+    color: #684029;
+    text-decoration: none;
+    outline: none;
+    cursor: pointer;
+    width: 94px;
+    height: 134px;
+    box-sizing: border-box;
+    padding: 24px 0;
+    margin-left: 60px;
+}
+
+table tr td:nth-child(1) a div {
+    width: 80px;
+    height: 80px;
+    border: 1px solid #efefef;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+table tr td {
+    box-sizing: border-box;
+    border-bottom: 2px dashed #F1F1F1;
+}
+
+table tr td:nth-child(2) {
+    width: 300px;
+    height: 134px;
+}
+
+table tr td:nth-child(3) {
+    width: 286px;
+}
+
+table tr td:nth-child(4) {
+    width: 115px;
+}
+
+table tr td:nth-child(5) {
+    width: 150px;
+}
+
+table tr td:nth-child(6) {
+    width: 100px;
+}
+
+table tr td:nth-child(7) .delete {
+    font-size: 12px;
+    font-weight: normal;
+    color: #fff;
+    background-color: #684029;
+    width: 80px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    float: left;
+    margin-bottom: 52px;
+}
+
+table tr td:nth-child(6) .meony {
+    float: left;
+    color: #FF714D;
+    font-size: 14px;
+    margin-bottom: 42px;
+    margin-left: 15px;
+}
+
+table tr td:nth-child(7) .delete {
+    color: #fff;
+    font-size: 14px;
+    margin-bottom: 50px;
+    width: 80px;
+    height: 30px;
+    cursor: pointer;
+    border: 0;
+    outline: none;
+}
+
+table tr td:nth-child(5) .num {
+    height: 22px;
+    width: 94px;
+    border: 1px solid #E7E7E7;
+    float: left;
+    margin-bottom: 56px;
+    cursor: pointer;
+}
+
+
+
+table tr td:nth-child(5) .num .left {
+    width: 22px;
+    border: none;
+    font-size: 18px;
+    line-height: 15px;
+    cursor: pointer;
+    float: left;
+    outline: none;
+    height: 22px;
+    font-size: 26px;
+    color: #684029;
+    background-color: #fff;
+}
+
+table tr td:nth-child(5) .num .right {
+    width: 22px;
+    border: none;
+    font-size: 18px;
+    line-height: 15px;
+    cursor: pointer;
+    float: left;
+    height: 22px;
+    outline: none;
+    color: #684029;
+    background-color: #fff;
+}
+
+table tr td:nth-child(5) .num .text {
+    height: 21px;
+    width: 46px;
+    float: left;
+    outline: none;
+    border: none;
+    border-left: 1px solid #E7E7E7;
+    border-right: 1px solid #E7E7E7;
+    text-align: center;
+}
+
+table tr td:nth-child(4) h2 {
+    font-size: 14px;
+    float: left;
+    margin-bottom: 42px;
+}
+
+table tr td:nth-child(3) select {
+    margin-bottom: 57px;
+    border: 1px solid #D5D5D5;
+    width: 226px;
+    height: 22px;
+    color: #D8C3AD;
+    outline: none;
+    padding-left: 8px;
+    position: relative;
+    cursor: pointer;
+    line-height: 22px;
+    float: left;
+}
+
+table tr td:nth-child(2) section {
+    width: 300px;
+    height: 134px;
+    box-sizing: border-box;
+    padding: 24px 0;
+    float: left;
+}
+
+table tr td:nth-child(2) section h2 {
+    width: 280px;
+    height: 20px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    float: left;
+}
+
+table tr td:nth-child(2) section h2 a {
+    color: #684029;
+    text-decoration: none;
+    outline: none;
+    cursor: pointer;
+    text-align: left !important;
+    font-size: 14px !important;
+    line-height: 20px;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-tap-highlight-color: transparent;
+}
+
+table tr td:nth-child(2) section .kg {
+    float: left;
+    font-size: 14px;
+    color: #D5BFA7;
+    display: block;
+    line-height: 20px;
+    margin-top: 10px;
+}
+
+table tr td:nth-child(2) section .tableware {
+    width: 280px;
+    display: block;
+    color: #CECECE;
+    height: 35px;
+    margin-top: 10px;
+    font-size: 12px;
+    float: left;
+}
+
+table tr td:nth-child(2) section i {
+    display: inline-block;
+    height: 20px;
+    width: 20px;
+    background: url(../font/canju.png) no-repeat;
+    margin-right: 5px;
+    margin-bottom: -6px;
 }
