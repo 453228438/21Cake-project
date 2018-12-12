@@ -67,6 +67,17 @@
     /*border-color: #bc9677;*/
 }
 
+.headerInner .searchBox {
+    height: 80px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    display: none;
+}
+
+.headerInner .searchBox li {
+    font-size: 12px;
+}
+
 .headerInner .nav2 {
     float: right;
     height: 46px;
