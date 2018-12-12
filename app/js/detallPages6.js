@@ -107,7 +107,7 @@ var Data = (function() {
                 if ($(this).index() == 4) {
                     $('p.right').html(data[i].picle4);
                 }
-                $('.main-right div.number5').eq($(this).index() - 1).append('<i class="iconfont icon-chenggong"></i>').siblings().children('i').remove();
+                $('.main-right div.number').eq($(this).index() - 1).append('<i class="iconfont icon-chenggong"></i>').siblings().children('i').remove();
             })
             $('.main-right div.number').click(function() {
                 $(this).siblings().children('i').remove()

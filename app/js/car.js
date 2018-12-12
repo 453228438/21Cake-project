@@ -1,4 +1,4 @@
-var car = (function () {
+var car = (function() {
     return {
         init() {
             this.event();
@@ -60,14 +60,14 @@ var car = (function () {
                 $('table tr td:nth-child(5) .num .text').eq(index).val(item.count)
                 $('table tr td:nth-child(6) .meony').eq(index).html((item.count * item.num) + '元')
             });
-            $('.mainInner').append('<div class="balance"><a href="#" class="empty">全部清空</a><ul class="total"><li>商品金额：¥ <span></span></li><li>配送费：¥ 0.00</li><li>活动优惠：¥ 0.00</li></ul><ul class="heji"><span class="abc">合计：¥<span></span></span></ul><h2><span>订单已满￥100元,享免费配送服务</span></h2><h3 class="btn"><a href="#" id="aaa">去结算</a></h3></div>');
+            $('.mainInner').append('<div class="balance"><a href="#" class="empty">全部清空</a><ul class="total"><li>商品金额：¥ <span></span></li><li>配送费：¥ 0.00</li><li>活动优惠：¥ 0.00</li></ul><ul class="heji"><span class="abc">合计：¥<span></span></span></ul><h2><span>订单已满￥100元,享免费配送服务</span></h2><h3 class="btn"><a href="javascript:;" id="aaa">去结算</a></h3></div>');
             $num = 0;
             for (var i = 0; i < data.length; i++) {
                 $num += data[i].count * data[i].num
             }
             $('.car_main .mainInner .balance .total li').eq(0).children('span').html($num)
             $('.car_main .mainInner .balance .heji .abc span').html($num)
-            $('table tr td:nth-child(5) .num .text').blur(function () {
+            $('table tr td:nth-child(5) .num .text').blur(function() {
                 $index = $(this).parent().parent().parent().index();
                 data[$index].count = $(this).val() - 0;
                 $(this).parent().parent().next().children('.meony').html((data[$index].count * data[$index].num) + '元')
@@ -79,7 +79,7 @@ var car = (function () {
                 $('.car_main .mainInner .balance .heji .abc span').html($num)
                 localStorage.shopList = JSON.stringify(data)
             })
-            $('table tr td:nth-child(5) .num .left').click(function () {
+            $('table tr td:nth-child(5) .num .left').click(function() {
                 $index = $(this).parent().parent().parent().index()
                 if ($(this).next().val() >= 2) {
                     $(this).next().val($(this).next().val() - 1)
@@ -94,7 +94,7 @@ var car = (function () {
                     localStorage.shopList = JSON.stringify(data)
                 }
             })
-            $('table tr td:nth-child(5) .num .right').click(function () {
+            $('table tr td:nth-child(5) .num .right').click(function() {
                 $index = $(this).parent().parent().parent().index()
                 $(this).prev().val($(this).prev().val() - 0 + 1)
                 data[$index].count += 1;
@@ -108,7 +108,7 @@ var car = (function () {
                 localStorage.shopList = JSON.stringify(data)
 
             })
-            $('table tr td:nth-child(7) .delete').click(function () {
+            $('table tr td:nth-child(7) .delete').click(function() {
                 $index = $(this).parent().parent().index();
                 data.splice($index, 1)
                 $(this).parent().parent().remove();
@@ -120,7 +120,19 @@ var car = (function () {
                 $('.car_main .mainInner .balance .heji .abc span').html($num)
                 localStorage.shopList = JSON.stringify(data)
             })
-
+            $('.car_main .mainInner .balance .btn #aaa').click(function() {
+                $cook = cookieUser.getCookId()
+                if ($cook != undefined) {
+                    alert('可以进行结算！');
+                } else {
+                    alert('请先登录！');
+                    if (alert) {
+                        window.location.href = "http://localhost:3333/21Cake-project/app/login.html";
+                    }
+                }
+                console.log(cookieUser.getCookId())
+                console.log($num);
+            })
             console.log($('.car_main .mainInner .balance .total li').eq(0).children('span'))
         }
     }

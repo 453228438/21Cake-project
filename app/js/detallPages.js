@@ -7,7 +7,7 @@ function getUrl() {
     var newStr2 = newStr.split("=");
     return newStr2[1];
 }
-var detall = (function () {
+var detall = (function() {
     var $banner = $('#wrapper-banner');
     var $min = $('#warpper-main');
     var $jiesuan = $('.jiesuan');
@@ -19,7 +19,7 @@ var detall = (function () {
         },
         event() {
             var _this = this;
-            $(document).scroll(function () {
+            $(document).scroll(function() {
                 if ($(document).scrollTop() >= $banner.innerHeight() + $min.innerHeight()) {
                     $('.header').css({
                         'display': 'none'
@@ -40,7 +40,7 @@ var detall = (function () {
                 'border': 'none'
             })
             console.log()
-            $('.min-banner').children('div').hover(function () {
+            $('.min-banner').children('div').hover(function() {
                 $(this).css({
                     'border': '1px solid #C69C6D',
                 })
@@ -51,16 +51,16 @@ var detall = (function () {
                     'border': 'none'
                 })
             })
-            $jiesuan.hover(function () {
+            $jiesuan.hover(function() {
                 $options.slideDown()
             })
-            $options.mouseleave(function () {
+            $options.mouseleave(function() {
                 $options.slideUp()
             })
         },
         getData(i) {
             var _this = this;
-            $.ajax('http://localhost:8887/21Cake-project/server/json/detallPages.json', {
+            $.ajax('http://localhost:3333/21Cake-project/server/json/detallPages.json', {
                 type: 'post',
                 contentType: 'application/json',
                 success(res) {
@@ -89,7 +89,7 @@ var detall = (function () {
             var arr = localStorage.shopList || '[]';
             arr = JSON.parse(arr);
             console.log(arr)
-            $('.btn-right').click(function () {
+            $('.btn-right').click(function() {
                 var i = $('.icon-chenggong').parent().index();
                 if (i == 1) {
                     List[0].picle = res.picle;
@@ -157,4 +157,4 @@ var detall = (function () {
 
     }
 }());
-detall.init(1)
+detall.init(getUrl());

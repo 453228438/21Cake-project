@@ -12,6 +12,7 @@
 .car_main .mainInner {
     height: auto;
     padding-top: 200px;
+    /* text-align: center; */
 }
 
 .car_main .mainInner .emptyCar {
@@ -28,7 +29,11 @@
     margin-bottom: 28px;
 }
 
-
+.car_main .mainInner .shopCar {
+    display: block;
+    text-align: center;
+    color: #e7cda7;
+}
 
 .car_main .mainInner a:hover {
     color: #bc9677;
@@ -176,8 +181,6 @@ table tr td:nth-child(5) .num {
     cursor: pointer;
 }
 
-
-
 table tr td:nth-child(5) .num .left {
     width: 22px;
     border: none;
@@ -245,12 +248,12 @@ table tr td:nth-child(2) section {
 }
 
 table tr td:nth-child(2) section h2 {
-    width: 280px;
-    height: 20px;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
-    float: left;
+    width: 280px !important;
+    height: 20px !important;
+    /* text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+    overflow: hidden !important; */
+    float: left !important;
 }
 
 table tr td:nth-child(2) section h2 a {
@@ -263,6 +266,9 @@ table tr td:nth-child(2) section h2 a {
     line-height: 20px;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     -webkit-tap-highlight-color: transparent;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 table tr td:nth-child(2) section .kg {
@@ -309,6 +315,11 @@ table tr td:nth-child(2) section i {
     left: 60px;
     display: block;
     font-size: 14px;
+    color: #000;
+}
+
+.car_main .mainInner .balance .empty:hover {
+    color: #bc9677;
 }
 
 .car_main .mainInner .balance .total li {
@@ -317,7 +328,6 @@ table tr td:nth-child(2) section i {
     text-align: right;
     line-height: 18px;
     margin-bottom: 10px;
-
 }
 
 .car_main .mainInner .balance .heji {
