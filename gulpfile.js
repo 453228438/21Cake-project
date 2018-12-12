@@ -11,8 +11,10 @@ var collector = require("gulp-rev-collector") //替换版本
     // var minify = require('gulp-minify');
 const rev = require('gulp-rev') //添加后缀名
 var runSequence = require('run-sequence');
-
+var sass = require('gulp-sass');
+sass.compiler = require('node-sass');
 // gulp.task('default', ['minijs', 'minicss', 'minihtml', 'watch', 'connect']);
+<<<<<<< HEAD
 gulp.task('default', function(callback) {
     runSequence('build-clean', ['minijs', 'minicss'],
         'minihtml',
@@ -62,19 +64,87 @@ gulp.task('minijs', function() { //压缩并合并js
     //     // gulp.watch('', ['miniimg'])
     // })
 gulp.task('minihtml', function() {
+=======
+// gulp.task('default', function (callback) {
+//     runSequence('build-clean',
+//         ['minijs', 'minicss'],
+//         'minihtml',
+//         'watch',
+//         'connect',
+//         callback);
+// });
+
+gulp.task('minijs', function () { //压缩并合并js
+    gulp.src('app/app2/*.js')
+        .pipe(babel({
+            presets: ['@babel/env']
+        }))
+        .pipe(uglify())
+        .pipe(rev()) //给压缩后的js文件生成hash字符串后缀
+        // .pipe(concat('all.js')) //合并js
+        .pipe(gulp.dest('dist')) //加入dist文件夹内
+        .pipe(rev.manifest()) //生成json文件，进行映射
+        .pipe(gulp.dest('rev/js')) //加入rev/js文件夹内
+        .pipe(connect.reload())
+})
+// })
+// gulp.task('minihtml', function () { //压缩并合并html
+//     gulp.src('')
+//         .pipe(htmlmin())
+//         .pipe(concat('all.html'))
+//         .pipe(gulp.dest('dist'))
+//         .pipe(connect.reload()); //发生改变刷新
+// })
+// gulp.task('minicss', function () { //压缩并合并css
+//     gulp.src('')
+//         .pipe(minifycss())
+//         .pipe(concat('all.css'))
+//         .pipe(gulp.dest('dist'))
+//         .pipe(connect.reload())
+// })
+// gulp.task('miniimg', function () { //压缩并合并img
+//     gulp.src('')
+//         .pipe(imagemin())
+//         // .pipe(concat('all.image'))
+//         .pipe(gulp.dest('dist'))
+//         .pipe(connect.reload())
+// })
+// gulp.task('watch', function () { //实时监听
+//     gulp.watch('', ['minihtml'])
+//     gulp.watch('', ['minijs'])
+//     gulp.watch('', ['minicss'])
+//     // gulp.watch('', ['miniimg'])
+// })
+gulp.task('minihtml', function () {
+>>>>>>> b02a05670e42843f5f959a63be18436f292c8fdc
     gulp.src(['rev/js/*.json', 'app/app2/a.html'])
         .pipe(collector())
         .pipe(gulp.dest('dist'))
         .pipe(connect.reload())
 })
+<<<<<<< HEAD
 gulp.task('connect', function() {
     connect.server({
         root: '21Cake-project',
 <<<<<<< HEAD
         port: '3333',
 =======
+=======
+gulp.task('all', function () {
+    gulp.src('app/**/*.*')
+        .pipe(gulp.dest('dist'))
+        .pipe(connect.reload())
+})
+gulp.task('connect', function () {
+    connect.server({
+        root: 'dist',
+>>>>>>> b02a05670e42843f5f959a63be18436f292c8fdc
         port: '8888',
 >>>>>>> 83695fd62a4519afc66f25e99312b30ac0fc82a6
         livereload: true
     });
 })
+gulp.task('watch', function () {
+    gulp.watch('app/**/*.*', ['all'])
+})
+gulp.task('default', ['all', 'watch', 'connect'])
