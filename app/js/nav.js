@@ -74,3 +74,78 @@ $(function() {
         })
     })
 })
+
+var search = (function() {
+    return {
+        init(ele) {
+            this.$box = document.querySelector(ele);
+            this.$inp = this.$box.querySelector('input');
+            this.$searchBox = this.$box.querySelector('.searchBox');
+            this.event();
+        },
+        event() {
+            var that = this;
+            this.$inp.oninput = function() {
+                if (this.value != '') {
+                    // 获取数据
+                    clearTimeout(this.time);
+                    // 减少http请求
+                    this.time = setTimeout(_ => {
+                        that.getData(this.value);
+                    }, 500)
+                } else {
+                    that.$searchBox.style.display = 'none';
+                }
+            }
+            this.$inp.onfocus = function() {
+                if (this.value != '') {
+                    that.$searchBox.style.display = 'block';
+                }
+
+            }
+            this.$inp.onblur = function() {
+                // 隐藏结果栏
+                that.$searchBox.style.display = 'none';
+
+            }
+        },
+        getData(val) {
+            var that = this;
+            var reg = new RegExp(val);
+            var obj = {
+                data: {
+                    value: val
+                }
+            }
+            sendAjax2('http://localhost:3333/21Cake-project/server/json/search.json', obj).then(res => {
+                res = JSON.parse(res);
+                var arr = [];
+                res.filter(item => {
+
+                    if (item.match(reg.exec(item))) {
+                        arr.push(item.match(reg.exec(item)));
+                    }
+                })
+                that.insertData(arr);
+                console.log(arr);
+            })
+        },
+        insertData(data) {
+            var that = this;
+            // console.log(data);
+            // data = data[3];
+            this.$searchBox.innerHTML = '';
+            for (let i = 0; i < data.length; i++) {
+                let $li = document.createElement('li');
+                $li.innerHTML = data[i].input;
+                console.log(data[i]);
+                this.$searchBox.appendChild($li);
+            }
+            this.$searchBox.style.display = 'block';
+        }
+    }
+})()
+
+search.init('.headerInner');
+
+var insertData = search.insertData.bind(search);
