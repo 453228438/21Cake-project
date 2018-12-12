@@ -45,6 +45,25 @@
 //     }
 // })()
 // nav.init('.headerInner');
+function Carlist() {
+    var arr = localStorage.shopList || '[]';
+    arr = JSON.parse(arr);
+    localStorage.shopList = JSON.stringify(arr)
+    var list = JSON.parse(localStorage.shopList);
+    var $i = document.querySelector('.ii');
+    var num = 0;
+    for (let i = 0; i < list.length; i++) {
+        num += list[i].count;
+    }
+    if (num == 0) {
+        $i.style.display = 'none';
+    } else if (num > 0) {
+        $i.style.display = 'block';
+        $i.innerHTML = num;
+    }
+    console.log(num);
+}
+
 $(function() {
     var $li = $('.posFather');
     // var $showBox = $('.pos');

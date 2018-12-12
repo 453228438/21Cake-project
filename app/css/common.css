@@ -104,13 +104,29 @@
     padding-right: 0;
 }
 
-.headerInner .nav2 li:nth-child(2) a .i2 {
-    display: inline-block;
-    width: 10px;
-    height: 7px;
+.headerInner .nav2>li:last-child a {
+    width: 25px;
+    height: 25px;
     background: url('../images/icon.png') no-repeat;
-    background-position: 0 -59px;
-    background-size: 310px 120px;
+    background-position: -322px -94px;
+    background-size: 350px 150px;
+    position: relative;
+}
+
+.headerInner .nav2>li:last-child a i {
+    /* display: block; */
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: hotpink;
+    top: -5px;
+    left: 14px;
+    font-size: 12px;
+    text-align: center;
+    line-height: 15px;
+    color: #fff;
+    display: none;
 }
 
 .headerInner .nav2 li:nth-child(4) {

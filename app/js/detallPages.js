@@ -152,6 +152,19 @@ var detall = (function() {
                     }
                 }
                 localStorage.shopList = JSON.stringify(arr)
+                var list = JSON.parse(localStorage.shopList);
+                var $i = document.querySelector('.ii');
+                var num = 0;
+                for (let i = 0; i < list.length; i++) {
+                    num += list[i].count;
+                }
+                if (num == 0) {
+                    $i.style.display = 'none';
+                } else if (num > 0) {
+                    $i.style.display = 'block';
+                    $i.innerHTML = num;
+                }
+                console.log(num);
             })
         }
 
