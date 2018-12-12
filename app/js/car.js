@@ -60,10 +60,23 @@ var car = (function () {
                 $('table tr td:nth-child(5) .num .text').eq(index).val(item.count)
                 $('table tr td:nth-child(6) .meony').eq(index).html((item.count * item.num) + '元')
             });
+            $('.mainInner').append('<div class="balance"><a href="#" class="empty">全部清空</a><ul class="total"><li>商品金额：¥ <span></span></li><li>配送费：¥ 0.00</li><li>活动优惠：¥ 0.00</li></ul><ul class="heji"><span class="abc">合计：¥<span></span></span></ul><h2><span>订单已满￥100元,享免费配送服务</span></h2><h3 class="btn"><a href="#" id="aaa">去结算</a></h3></div>');
+            $num = 0;
+            for (var i = 0; i < data.length; i++) {
+                $num += data[i].count * data[i].num
+            }
+            $('.car_main .mainInner .balance .total li').eq(0).children('span').html($num)
+            $('.car_main .mainInner .balance .heji .abc span').html($num)
             $('table tr td:nth-child(5) .num .text').blur(function () {
                 $index = $(this).parent().parent().parent().index();
                 data[$index].count = $(this).val() - 0;
                 $(this).parent().parent().next().children('.meony').html((data[$index].count * data[$index].num) + '元')
+                $num = 0;
+                for (var i = 0; i < data.length; i++) {
+                    $num += data[i].count * data[i].num
+                }
+                $('.car_main .mainInner .balance .total li').eq(0).children('span').html($num)
+                $('.car_main .mainInner .balance .heji .abc span').html($num)
                 localStorage.shopList = JSON.stringify(data)
             })
             $('table tr td:nth-child(5) .num .left').click(function () {
@@ -72,6 +85,12 @@ var car = (function () {
                     $(this).next().val($(this).next().val() - 1)
                     data[$index].count -= 1;
                     $(this).parent().parent().next().children('.meony').html((data[$index].count * data[$index].num) + '元')
+                    $num = 0;
+                    for (var i = 0; i < data.length; i++) {
+                        $num += data[i].count * data[i].num
+                    }
+                    $('.car_main .mainInner .balance .total li').eq(0).children('span').html($num)
+                    $('.car_main .mainInner .balance .heji .abc span').html($num)
                     localStorage.shopList = JSON.stringify(data)
                 }
             })
@@ -80,14 +99,29 @@ var car = (function () {
                 $(this).prev().val($(this).prev().val() - 0 + 1)
                 data[$index].count += 1;
                 $(this).parent().parent().next().children('.meony').html((data[$index].count * data[$index].num) + '元')
+                $num = 0;
+                for (var i = 0; i < data.length; i++) {
+                    $num += data[i].count * data[i].num
+                }
+                $('.car_main .mainInner .balance .total li').eq(0).children('span').html($num)
+                $('.car_main .mainInner .balance .heji .abc span').html($num)
                 localStorage.shopList = JSON.stringify(data)
+
             })
             $('table tr td:nth-child(7) .delete').click(function () {
                 $index = $(this).parent().parent().index();
                 data.splice($index, 1)
                 $(this).parent().parent().remove();
+                $num = 0;
+                for (var i = 0; i < data.length; i++) {
+                    $num += data[i].count * data[i].num
+                }
+                $('.car_main .mainInner .balance .total li').eq(0).children('span').html($num)
+                $('.car_main .mainInner .balance .heji .abc span').html($num)
                 localStorage.shopList = JSON.stringify(data)
             })
+
+            console.log($('.car_main .mainInner .balance .total li').eq(0).children('span'))
         }
     }
 }())

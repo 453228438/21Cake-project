@@ -157,4 +157,4 @@ var detall = (function () {
 
     }
 }());
-detall.init()
+detall.init(1)
