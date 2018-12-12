@@ -39,7 +39,7 @@ var register = (function() {
             this.inpArr = [];
             this.inpArr.push(this.$psw);
             this.inpArr.push(this.$phone);
-            console.log(this.inpArr);
+            //console.log(this.inpArr);
             this.event();
             this.setRanNum();
             // this.checkInput2(str);
@@ -70,7 +70,7 @@ var register = (function() {
                 }
             }
             phone.onchange = function() {
-                console.log(this.value);
+                //console.log(this.value);
                 var obj = {
                     //method: 'POST',
                     data: {
@@ -78,7 +78,7 @@ var register = (function() {
                     },
                     success: function(data) {
                         data = JSON.parse(data);
-                        console.log(data.code);
+                        //console.log(data.code);
                         if (data.code == '10000') {
                             that.$txt.style.color = '#ff714d';
                             that.$txt.innerHTML = '手机号已存在';
@@ -168,6 +168,35 @@ var register = (function() {
             }
             this.$regBtn.onclick = function() { //点击注册按钮时，
                 var $txtAll = that.$box.querySelectorAll('input'); //获取所有的input输入框
+                var $telVal = that.$phone.value;
+                var $pswVal = that.$psw.value;
+                var $birthVal = that.$birth.value;
+                //console.log($telVal);
+                var obj = {
+                    method: 'POST',
+                    data: {
+                        tel: $telVal,
+                        psw: $pswVal,
+                        birth: $birthVal
+                    },
+                    success: function(data) {
+                        //console.log(data);
+                        data = JSON.parse(data);
+                        console.log(data.code);
+                        if (data.code == '10000') {
+                            alert('注册成功！');
+                            if (alert) {
+                                window.location.href = 'http://localhost:3333/21Cake-project/app/login.html';
+                            }
+
+                        } else if (data.code == '0') {
+                            alert('注册失败！');
+                            if (alert) {
+                                window.location.href = 'http://localhost:3333/21Cake-project/app/register.html';
+                            }
+                        }
+                    }
+                }
                 for (let i = 0; i < $txtAll.length; i++) {
                     // console.log(i);
                     if ($txtAll[i].className.indexOf('suc') == -1) { //判断它们是否有suc的class名，此class名表示已验证成功
@@ -175,6 +204,7 @@ var register = (function() {
                         return false; //不允许跳转
                     }
                 }
+                sendAjax('http://localhost:3333/21Cake-project/server/php/register2.php', obj);
             }
             this.$birth.onblur = function() { //判断用户是否输入了生日
                 if (this.value == '') {
