@@ -10,11 +10,13 @@ var car = (function () {
         getData() {
             var shopList = localStorage.shopList;
             shopList = JSON.parse(shopList)
+            if (shopList.length == 0) {
+                return
+            }
             this.data = shopList;
             this.insertData(shopList)
         },
         insertData(data) {
-            console.log(data)
             $('.mainInner').children().remove()
             $('.mainInner').css({
                 'padding-top': '100px'
@@ -80,10 +82,12 @@ var car = (function () {
                 $(this).parent().parent().next().children('.meony').html((data[$index].count * data[$index].num) + '元')
                 localStorage.shopList = JSON.stringify(data)
             })
-
-
-
-
+            $('table tr td:nth-child(7) .delete').click(function () {
+                $index = $(this).parent().parent().index();
+                data.splice($index, 1)
+                $(this).parent().parent().remove();
+                localStorage.shopList = JSON.stringify(data)
+            })
         }
     }
 }())

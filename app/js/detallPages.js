@@ -14,8 +14,6 @@ var detall = (function () {
     var $options = $('.options');
     return {
         init(i) {
-            console.log()
-            console.log()
             this.event();
             this.getData(i)
         },
@@ -90,42 +88,67 @@ var detall = (function () {
         upData(res, List) {
             var arr = localStorage.shopList || '[]';
             arr = JSON.parse(arr);
+            console.log(arr)
             $('.btn-right').click(function () {
                 var i = $('.icon-chenggong').parent().index();
                 if (i == 1) {
                     List[0].picle = res.picle;
                     List[0].kg = res.kg1;
                     List[0].num = res.num1;
-                    List[0].count += 1;
-                    arr.push(List[0]);
+                    for (var k = 0; k < arr.length; k++) {
+                        if (arr[k].kg == res.kg1) {
+                            arr[k].count += 1;
+                            break;
+                        }
+                    }
+                    if (k == arr.length) {
+                        List[0].count += 1;
+                        arr.push(List[0]);
+                    }
                 }
                 if (i == 2) {
                     List[1].picle = res.picle2;
                     List[1].kg = res.kg2;
                     List[1].num = res.num2;
-                    List[1].count += 1;
-                    arr.push(List[1]);
+                    for (var k = 0; k < arr.length; k++) {
+                        if (arr[k].kg == res.kg2) {
+                            arr[k].count += 1;
+                            break;
+                        }
+                    }
+                    if (k == arr.length) {
+                        List[1].count += 1;
+                        arr.push(List[1]);
+                    }
                 }
                 if (i == 3) {
                     List[2].picle = res.picle3;
                     List[2].kg = res.kg3;
                     List[2].num = res.num3;
-                    List[2].count += 1;
-                    arr.push(List[2]);
+                    for (var k = 0; k < arr.length; k++) {
+                        if (arr[k].kg == res.kg3) {
+                            arr[k].count += 1;
+                            break;
+                        }
+                    }
+                    if (k == arr.length) {
+                        List[2].count += 1;
+                        arr.push(List[2]);
+                    }
                 }
                 if (i == 4) {
                     List[3].picle = res.picle4;
                     List[3].kg = res.kg4;
                     List[3].num = res.num4;
-                    List[3].count += 1;
-                    arr.push(List[3]);
-                }
-                for (var i = 0; i < arr.length; i++) {
-                    for (var j = i + 1; j < arr.length; j++) {
-                        if (arr[i].kg == arr[j].kg && arr[i].id == arr[j].id) {
-                            arr[i].count = arr[j].count;
-                            arr.splice(j, 1)
+                    for (var k = 0; k < arr.length; k++) {
+                        if (arr[k].kg == res.kg4) {
+                            arr[k].count += 1;
+                            break;
                         }
+                    }
+                    if (k == arr.length) {
+                        List[3].count += 1;
+                        arr.push(List[3]);
                     }
                 }
                 localStorage.shopList = JSON.stringify(arr)
@@ -134,4 +157,4 @@ var detall = (function () {
 
     }
 }());
-detall.init(getUrl())
+detall.init()
