@@ -63,7 +63,7 @@ var login = (function() {
                     //     }
                     // }
                 }
-                sendAjax2('../server/php/login_name.php', obj).then(data => {
+                sendAjax2('http://localhost:3333/21Cake-project/server/php/login_name.php', obj).then(data => {
                     data = JSON.parse(data);
                     if (data.code == '10000') {
                         that.$txt1.style.color = 'green';
@@ -120,7 +120,7 @@ var login = (function() {
                         }
                     }
                 }
-                sendAjax('../server/php/login_phone.php', obj);
+                sendAjax('http://localhost:3333/21Cake-project/server/php/login_phone.php', obj);
             }
             this.$imim.onclick = function() { //点击图片字符，就刷新字符
                 that.setRanNum();

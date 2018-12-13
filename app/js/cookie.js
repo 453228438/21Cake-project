@@ -1,3 +1,4 @@
+console.log(111);
 var cookieUser = (function() {
     return {
         init(ele) {

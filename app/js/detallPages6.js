@@ -33,7 +33,7 @@ var Data = (function() {
         // },
         getData(i) {
             var _this = this;
-            $.ajax('../server/json/detallPages.json', {
+            $.ajax('http://localhost:3333/21Cake-project/server/json/detallPages.json', {
                 type: 'post',
                 contentType: 'application/json',
                 success(res) {
@@ -77,7 +77,7 @@ var Data = (function() {
                 cursor: 'pointer'
             })
             $('i.canju').css({
-                'backgroundImage': 'url(../app/font/canju.png)'
+                'backgroundImage': 'url(http://localhost:3333/21Cake-project/app/font/canju.png)'
             })
             $('.money').remove()
             $('div.number').eq(0).html(data[i].kg1)

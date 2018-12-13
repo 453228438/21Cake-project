@@ -90,7 +90,7 @@ var register = (function() {
                         }
                     }
                 }
-                sendAjax('../server/php/register.php', obj);
+                sendAjax('http://localhost:3333/21Cake-project/server/php/register.php', obj);
             }
             this.$im.onclick = function() { //点击图片字符，就刷新字符
                 that.setRanNum();

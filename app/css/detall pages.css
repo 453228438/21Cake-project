@@ -94,10 +94,9 @@
     display: inline-block;
     width: 18px;
     height: 18px;
-    background-image: url(../font/chengzhong.png);
+    background-image: url(http://localhost:3333/21Cake-project/app/font/chengzhong.png);
     background-size: 100%;
     margin-right: 3px;
-
 }
 
 .options .details-img-box span:nth-child(2) .icon-pengyoufill {
@@ -240,7 +239,9 @@
     justify-content: space-between;
 }
 
+
 /* #warpper-main .content {} */
+
 #warpper-main .main .main-left {
     width: 485px;
     height: auto;
@@ -292,7 +293,7 @@
     width: 24px;
     height: 34px;
     display: inline-block;
-    background-image: url(../font/naiyou.png);
+    background-image: url(http://localhost:3333/21Cake-project/app/font/naiyou.png);
     margin-right: 18px;
 }
 
@@ -313,10 +314,9 @@
     display: inline-block;
     width: 18px;
     height: 18px;
-    background-image: url(../font/chengzhong.png);
+    background-image: url(http://localhost:3333/21Cake-project/app/font/chengzhong.png);
     background-size: 100%;
     margin-right: 3px;
-
 }
 
 #warpper-main .main .main-right .details-img-box span:nth-child(3) i {
@@ -469,7 +469,6 @@
     position: relative;
     font-weight: normal;
     border: none;
-
 }
 
 .recommend-list ul li .list .cart {
@@ -528,21 +527,21 @@
     display: block;
     width: 180px;
     height: 198px;
-    background-image: url(../images/birthCake1.png);
+    background-image: url(http://localhost:3333/21Cake-project/app/images/birthCake1.png);
     background-repeat: no-repeat;
     background-size: 100%;
 }
 
 .recommend-list ul li:nth-child(2) .list .img {
-    background-image: url(../images/birthCake2.png);
+    background-image: url(http://localhost:3333/21Cake-project/app/images/birthCake2.png);
 }
 
 .recommend-list ul li:nth-child(3) .list .img {
-    background-image: url(../images/birthCake3.png);
+    background-image: url(http://localhost:3333/21Cake-project/app/images/birthCake3.png);
 }
 
 .recommend-list ul li .list:nth-child(4) .img {
-    background-image: url(../images/birthCake4.png);
+    background-image: url(http://localhost:3333/21Cake-project/app/images/birthCake4.png);
 }
 
 .recommend-list ul li .list h4 {
