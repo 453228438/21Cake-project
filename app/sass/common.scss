@@ -1,0 +1,300 @@
+/***********头部导航栏***********/
+.header {
+  height: 80px;
+  background-color: #fff;
+  box-shadow: 0 2px 2px 0 rgba(195, 195, 195, 0.50);
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  z-index: 999;
+}
+.headerInner {
+  height: 61px;
+  background-color: #fff;
+  padding-top: 19px;
+  h1 {
+    width: 120px;
+    float: left;
+    a {
+      display: block;
+      width: 120px;
+      height: 44px;
+      background: url("http://localhost:3333/21Cake-project/app/images/logo.png") no-repeat;
+      -webkit-background-size: cover;
+      background-size: cover;
+    }
+  }
+  .nav1 {
+    float: left;
+    height: 46px;
+    margin-left: 30px;
+    line-height: 46px;
+    li {
+      float: left;
+      a {
+        display: block;
+        padding: 0 15px;
+        color: #684029;
+        font-size: 14px;
+        &:hover {
+          color: #bc9677;
+        }
+      }
+    }
+  }
+  form {
+    float: left;
+    margin-left: 7px;
+    margin-top: 11px;
+  }
+  input {
+    outline: #bc9677;
+  }
+  .searchBox {
+    height: 80px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    display: none;
+    overflow: hidden;
+    li {
+      font-size: 12px;
+    }
+  }
+  .nav2 {
+    float: right;
+    height: 46px;
+    line-height: 46px;
+    width: 310px;
+    li {
+      float: left;
+      padding: 0 10px;
+      position: relative;
+      &:nth-child(1) {
+        margin-right: 10px;
+        padding-left: 0;
+      }
+      &:nth-child(2) {
+        margin-right: 8px;
+        padding-right: 0;
+      }
+      &:nth-child(4) {
+        margin-right: 4px;
+      }
+      a {
+        display: inline-block;
+        color: #684029;
+        font-size: 14px;
+        &:hover {
+          color: #bc9677;
+        }
+      }
+      &:last-child {
+        padding: 0;
+        padding-top: 4px;
+        padding-left: 5px;
+        height: 42px;
+      }
+    }
+    & > li {
+      &:last-child {
+        a {
+          width: 25px;
+          height: 25px;
+          background: url('http://localhost:3333/21Cake-project/app/images/icon.png') no-repeat;
+          background-position: -322px -94px;
+          background-size: 350px 150px;
+          position: relative;
+          width: 18px;
+          height: 18px;
+          background: url('http://localhost:3333/21Cake-project/app/images/icon.png') no-repeat;
+          background-position: -286px -76px;
+          background-size: 310px 120px;
+          i {
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background-color: hotpink;
+            top: -5px;
+            left: 14px;
+            font-size: 12px;
+            text-align: center;
+            line-height: 15px;
+            color: #fff;
+            display: none;
+          }
+        }
+      }
+    }
+    .pos {
+      position: absolute;
+      z-index: 9999;
+      padding: 0;
+      margin: 0;
+      border: 1px solid #ededed;
+      background-color: #fff;
+      font-size: 12px;
+    }
+    .app {
+      text-align: center;
+      box-sizing: border-box;
+      width: 120px;
+      height: 135px;
+      right: -28px;
+      bottom: -135px;
+      color: #6a3f2c;
+      line-height: 24px;
+      padding-left: 2.5px;
+      padding-top: 2.5px;
+      display: none;
+      border: 1px solid #ededed;
+      background-color: #fff;
+    }
+    .place {
+      width: 110px;
+      height: 198px;
+      right: -30px;
+      bottom: -198px;
+      box-sizing: border-box;
+      padding-top: 12px;
+      border: 1px solid #ededed;
+      background-color: #fff;
+      display: none;
+      li {
+        float: none;
+        padding: 0;
+        margin: 0;
+      }
+      a {
+        display: block;
+        line-height: 24px;
+        text-align: center;
+        color: #d6bfab;
+        font-size: 12px;
+      }
+    }
+    .news {
+      width: 105px;
+      height: 78px;
+      right: -28px;
+      bottom: -78px;
+      box-sizing: border-box;
+      padding-top: 12px;
+      display: none;
+      li {
+        float: none;
+        padding: 0;
+        margin: 0;
+      }
+      a {
+        display: block;
+        line-height: 24px;
+        text-align: center;
+        color: #d6bfab;
+        font-size: 12px;
+      }
+    }
+    .esc {
+      width: 105px;
+      height: 60px;
+      border: 1px solid #ededed;
+      background-color: #fff;
+      position: absolute;
+      right: -11px;
+      line-height: 60px;
+      text-align: center;
+      bottom: -60px;
+      display: none;
+      a {
+        font-size: 12px;
+      }
+    }
+  }
+}
+/***********底部***********/
+.footer {
+  height: 380px;
+  background-color: #333333;
+}
+.footerInner {
+  height: 285px;
+  padding-top: 50px;
+  p {
+    font-size: 12px;
+    color: #9a9a9a;
+    text-align: center;
+  }
+  .p1 {
+    font-weight: 900;
+  }
+}
+.footer_foot {
+  width: 100%;
+  height: 44px;
+  border-top: 1px solid #616161;
+  text-align: center;
+  line-height: 44px;
+  color: #9a9a9a;
+  font-size: 12px;
+}
+.footLogo {
+  width: 96px;
+  height: 36px;
+  margin: 0 auto;
+  margin-bottom: 28px;
+}
+.footer_ul {
+  width: 795px;
+  height: 13px;
+  display: flex;
+  margin: 0 auto;
+  justify-content: space-between;
+  margin-bottom: 26px;
+  li {
+    width: 25%;
+    height: 13px;
+    line-height: 13px;
+    text-align: center;
+    border-right: 1px solid #fff;
+    &:nth-child(5) {
+      border: none;
+    }
+    a {
+      color: #fff;
+      font-size: 12px;
+    }
+  }
+}
+.footer_ul2 {
+  width: 312px;
+  height: 50px;
+  display: flex;
+  margin: 0 auto;
+  margin-bottom: 24px;
+  li {
+    height: 100%;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    a {
+      display: block;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background-color: #494949;
+      line-height: 50px;
+      text-align: center;
+      color: #fff;
+      vertical-align: middle;
+      img {
+        vertical-align: middle;
+      }
+      span {
+        height: 100%;
+        vertical-align: middle;
+        display: block;
+        width: 0;
+      }
+    }
+  }
+}

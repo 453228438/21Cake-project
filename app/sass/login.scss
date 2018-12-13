@@ -1,0 +1,227 @@
+.loginMain {
+  background: url("http://localhost:3333/21Cake-project/app/images/bg.jpg") no-repeat;
+  height: 560px;
+  -webkit-background-size: cover;
+  background-size: cover;
+  padding-top: 114px;
+  box-sizing: border-box;
+  .loginPage {
+    width: 386px;
+    height: 443px;
+    border: 1px solid #e9e9e9;
+    float: right;
+    margin-right: 82px;
+    padding: 28px 42px 0 42px;
+    box-sizing: border-box;
+    text-align: center;
+    position: relative;
+  }
+}
+.loginPage {
+  ul {
+    width: 100%;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    li {
+      padding-right: 21px;
+      padding-left: 21px;
+      color: #c9c9c9;
+      cursor: pointer;
+      line-height: 25px;
+      &:nth-child(1) {
+        border-right: 1px solid #c9c9c9;
+      }
+    }
+  }
+  .li_btnColor {
+    color: #482618;
+  }
+  .name_login {
+    width: 304px;
+    height: 369px;
+    position: absolute;
+    top: 45px;
+    left: 40px;
+    padding-top: 26px;
+  }
+  .phone_login {
+    width: 304px;
+    height: 369px;
+    position: absolute;
+    top: 45px;
+    left: 40px;
+    padding-top: 26px;
+    display: none;
+    .inp1 {
+      width: 100%;
+      height: 36px;
+      outline: 0;
+      margin-bottom: 10px;
+    }
+    .inp2 {
+      width: 138px;
+      height: 36px;
+      outline: 0;
+      margin-bottom: 8px;
+    }
+    .imgTxt {
+      float: left;
+    }
+    .imgimg {
+      display: inline-block;
+      width: 114px;
+      height: 36px;
+      border: 1px solid #efefef;
+      float: left;
+      margin-left: 10px;
+      margin-bottom: 10px;
+      line-height: 38px;
+      font-size: 22px;
+      color: hotpink;
+      cursor: pointer;
+    }
+    .informationTxt {
+      float: left;
+    }
+    .imgimg2 {
+      display: inline-block;
+      width: 149px;
+      height: 36px;
+      border: 1px solid #efefef;
+      float: left;
+      margin-left: 10px;
+      margin-bottom: 10px;
+      background-color: #fafafa;
+      line-height: 36px;
+      cursor: pointer;
+    }
+    .phone_Txt {
+      width: 100%;
+      height: 42px;
+      line-height: 42px;
+      font-size: 12px;
+      color: #ff714d;
+      float: left;
+    }
+    .phone_Btn {
+      width: 100%;
+      height: 48px;
+      line-height: 48px;
+      text-align: center;
+      color: #fff;
+      background-color: #442818;
+      cursor: pointer;
+      margin-bottom: 18px;
+    }
+  }
+}
+.name_login {
+  input {
+    width: 100%;
+    height: 36px;
+    outline: 0;
+    margin-bottom: 10px;
+    &:nth-child(2) {
+      margin-bottom: 0;
+    }
+  }
+  .loginTxt {
+    width: 100%;
+    height: 42px;
+    line-height: 42px;
+    font-size: 12px;
+    color: #ff714d;
+  }
+  .loginBtn {
+    width: 100%;
+    height: 48px;
+    line-height: 48px;
+    text-align: center;
+    color: #fff;
+    background-color: #442818;
+    cursor: pointer;
+    margin-bottom: 18px;
+  }
+  .rem {
+    display: flex;
+    float: left;
+    width: 73px;
+    height: 36px;
+    justify-content: space-between;
+    font-size: 12px;
+    line-height: 36px;
+    color: #684029;
+    input {
+      width: 18px;
+    }
+  }
+  .forget {
+    float: right;
+    width: 102px;
+    height: 36px;
+    font-size: 12px;
+    line-height: 36px;
+    display: flex;
+    justify-content: space-between;
+    a {
+      color: #684029;
+    }
+  }
+  .weixin {
+    width: 100%;
+    height: 76px;
+    border-top: 1px solid #e9e9e9;
+    position: absolute;
+    bottom: 0;
+    span {
+      display: block;
+      width: 120px;
+      height: 14px;
+      line-height: 14px;
+      text-align: center;
+      margin: 0 auto;
+      background-color: #fff;
+      color: #b3bacd;
+      margin-top: -7px;
+      margin-bottom: 20px;
+    }
+    a {
+      display: block;
+      width: 68px;
+      height: 52px;
+      margin: 0 auto;
+      background: url("http://localhost:3333/21Cake-project/app/images/login-weixin.png") no-repeat;
+      -webkit-background-size: cover;
+      background-size: cover;
+    }
+  }
+}
+.phone_login {
+  .rem {
+    display: flex;
+    float: left;
+    width: 73px;
+    height: 36px;
+    justify-content: space-between;
+    font-size: 12px;
+    line-height: 36px;
+    color: #684029;
+    input {
+      width: 18px;
+      height: 36px;
+    }
+  }
+  .forget {
+    float: right;
+    width: 102px;
+    height: 36px;
+    font-size: 12px;
+    line-height: 36px;
+    display: flex;
+    justify-content: space-between;
+    a {
+      color: #684029;
+    }
+  }
+}
