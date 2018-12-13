@@ -1,3 +1,6 @@
 node_modules
 dist
 rev
+.project
+package
+sh.exe.stackdump
