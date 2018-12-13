@@ -90,7 +90,7 @@ var register = (function() {
                         }
                     }
                 }
-                sendAjax('http://localhost:3333/21Cake-project/server/php/register.php', obj);
+                sendAjax(apiObj.register, obj);
             }
             this.$im.onclick = function() { //点击图片字符，就刷新字符
                 that.setRanNum();
@@ -186,13 +186,13 @@ var register = (function() {
                         if (data.code == '10000') {
                             alert('注册成功！');
                             if (alert) {
-                                window.location.href = 'http://localhost:3333/21Cake-project/app/login.html';
+                                window.location.href = 'login.html';
                             }
 
                         } else if (data.code == '0') {
                             alert('注册失败！');
                             if (alert) {
-                                window.location.href = 'http://localhost:3333/21Cake-project/app/register.html';
+                                window.location.href = 'register.html';
                             }
                         }
                     }
@@ -204,7 +204,7 @@ var register = (function() {
                         return false; //不允许跳转
                     }
                 }
-                sendAjax('http://localhost:3333/21Cake-project/server/php/register2.php', obj);
+                sendAjax(apiObj.register2, obj);
             }
             this.$birth.onblur = function() { //判断用户是否输入了生日
                 if (this.value == '') {

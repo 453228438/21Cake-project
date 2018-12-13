@@ -294,7 +294,7 @@ table tr td:nth-child(2) section i {
     display: inline-block;
     height: 20px;
     width: 20px;
-    background: url(http://localhost:3333/21Cake-project/app/font/canju.png) no-repeat;
+    background: url(../font/canju.png) no-repeat;
     margin-right: 5px;
     margin-bottom: -6px;
 }

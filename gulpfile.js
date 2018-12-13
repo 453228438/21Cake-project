@@ -59,6 +59,18 @@ gulp.task('minihtml', function() { //压缩并合并html
         .pipe(connect.reload()); //发生改变刷新
 })
 
+gulp.task('server', function () {
+    gulp.src('app/server/*.*')
+        .pipe(gulp.dest('dist/server'))
+        .pipe(connect.reload())
+}),
+
+gulp.task('sass', function() {
+    gulp.src('app/sass/*.scss')
+        .pipe(sass().on('error', sass.logError))
+        .pipe(gulp.dest('dist/css'));
+})
+
 gulp.task('connect', function() {
     connect.server({
         root: 'app',
@@ -67,14 +79,12 @@ gulp.task('connect', function() {
     });
 })
 gulp.task('default', function() {
-    runSequence(['minijs', 'miniimg', 'minifont', 'minifont2'],
+    runSequence(['sass','minijs', 'miniimg', 'minifont', 'minifont2'],
         'minihtml',
+		'server',
         'watch',
         'connect'
     )
 });
-gulp.task('sass', function() {
-    gulp.src('app/sass/*.scss')
-        .pipe(sass().on('error', sass.logError))
-        .pipe(gulp.dest('dist/css'));
-})
+
+

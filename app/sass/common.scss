@@ -19,7 +19,7 @@
       display: block;
       width: 120px;
       height: 44px;
-      background: url("http://localhost:3333/21Cake-project/app/images/logo.png") no-repeat;
+      background: url("../images/logo.png") no-repeat;
       -webkit-background-size: cover;
       background-size: cover;
     }
@@ -100,13 +100,13 @@
         a {
           width: 25px;
           height: 25px;
-          background: url('http://localhost:3333/21Cake-project/app/images/icon.png') no-repeat;
+          background: url('../images/icon.png') no-repeat;
           background-position: -322px -94px;
           background-size: 350px 150px;
           position: relative;
           width: 18px;
           height: 18px;
-          background: url('http://localhost:3333/21Cake-project/app/images/icon.png') no-repeat;
+          background: url('../images/icon.png') no-repeat;
           background-position: -286px -76px;
           background-size: 310px 120px;
           i {

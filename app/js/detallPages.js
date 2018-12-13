@@ -60,7 +60,7 @@ var detall = (function() {
         },
         getData(i) {
             var _this = this;
-            $.ajax('http://localhost:3333/21Cake-project/server/json/detallPages.json', {
+            $.ajax(apijson2, {
                 type: 'post',
                 contentType: 'application/json',
                 success(res) {

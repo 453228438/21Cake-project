@@ -127,7 +127,7 @@ var car = (function() {
                 } else {
                     alert('请先登录！');
                     if (alert) {
-                        window.location.href = "http://localhost:3333/21Cake-project/app/login.html";
+                        window.location.href = "login.html";
                     }
                 }
                 console.log(cookieUser.getCookId())

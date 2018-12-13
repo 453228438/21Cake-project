@@ -136,7 +136,7 @@ var search = (function() {
                     value: val
                 }
             }
-            sendAjax2('http://localhost:3333/21Cake-project/server/json/search.json', obj).then(res => {
+            sendAjax2(apijson, obj).then(res => {
                 res = JSON.parse(res);
                 var arr = [];
                 res.filter(item => {

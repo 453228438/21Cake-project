@@ -340,36 +340,36 @@ function sendJsonp(url, data) {
 
 
 //cookie
-var cookie = (function() {
+// var cookie = (function() {
 
-    return {
-        getItem(key) {
-            return this.getObject()[key];
-        },
-        getObject() {
-            var obj = {};
-            var cookieAll = document.cookie.split('; ');
-            cookieAll.forEach(item => {
-                var _item = item.split('=');
-                obj[_item[0]] = _item[1];
-            })
-            return obj;
-        },
-        setItem(key, value, day) {
-            var sec = day * 24 * 3600;
-            document.cookie = `${key}=${value}; max-age=${sec}`;
-        },
-        removeItem(key) {
-            this.setItem(key, '', -1);
-        },
-        clear() {
-            var obj = this.getObject()
-            for (var i in obj) {
-                this.removeItem(i);
-            }
-        }
-    }
-}())
+//     return {
+//         getItem(key) {
+//             return this.getObject()[key];
+//         },
+//         getObject() {
+//             var obj = {};
+//             var cookieAll = document.cookie.split('; ');
+//             cookieAll.forEach(item => {
+//                 var _item = item.split('=');
+//                 obj[_item[0]] = _item[1];
+//             })
+//             return obj;
+//         },
+//         setItem(key, value, day) {
+//             var sec = day * 24 * 3600;
+//             document.cookie = `${key}=${value}; max-age=${sec}`;
+//         },
+//         removeItem(key) {
+//             this.setItem(key, '', -1);
+//         },
+//         clear() {
+//             var obj = this.getObject()
+//             for (var i in obj) {
+//                 this.removeItem(i);
+//             }
+//         }
+//     }
+// }())
 
 
 var watcher = {
@@ -434,14 +434,20 @@ var cookie = (function() {
             var sec = day * 24 * 3600;
             document.cookie = `${key}=${value}; max-age=${sec}`;
         },
-        removeItem(key) {
+        removeCookie(key) {
             this.setItem(key, '', -1);
+            console.log(this);
         },
         clear() {
-            var obj = this.getObject()
-            for (var i in obj) {
-                this.removeItem(i);
+            console.log(this);
+            var obj = cookie.getObject()
+            console.log(obj);
+            // this.removeCookie('username');
+            for (var key in obj) {
+                this.removeCookie(key);
+                console.log(this);
             }
         }
+
     }
 }())

@@ -155,7 +155,7 @@
 
 .shopMainInner ul li a .dv2 i {
     display: inline-block;
-    background: url('http://localhost:3333/21Cake-project/app/images/icon.png');
+    background: url('../images/icon.png');
     background-position: -216px -40px;
     background-size: 310px 120px;
     height: 28px;

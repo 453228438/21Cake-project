@@ -24,6 +24,7 @@ var cookieUser = (function() {
                 })
                 $(that.$cooker).children('.esc').children().click(function() {
                     that.removeCookie();
+                    // console.log(111);
                 })
             }
 
@@ -42,8 +43,9 @@ var cookieUser = (function() {
             that.$cooker.appendChild($div);
         },
         removeCookie() {
-            var that = this;
+            // var that = this;
             cookie.clear();
+            console.log(222);
             this.$cooker.innerHTML = '';
             this.$cooker.innerHTML = " <a href='login.html'>登录</a>/<a href='register.html'>注册</a>";
         }
