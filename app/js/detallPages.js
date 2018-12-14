@@ -62,8 +62,9 @@ var detall = (function() {
             var _this = this;
             $.ajax(apijson2, {
                 type: 'post',
-                contentType: 'application/json',
+                // contentType: 'application/json',
                 success(res) {
+					res = JSON.parse(res);
                     _this.setItem(res, i)
                 }
             })

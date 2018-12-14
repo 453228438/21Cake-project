@@ -35,8 +35,11 @@ var Data = (function() {
             var _this = this;
             $.ajax(apijson2, {
                 type: 'post',
-                contentType: 'application/json',
+                // contentType: 'application/json',
                 success(res) {
+					
+					res = JSON.parse(res);
+					console.log(res);
                     _this.insertData(res, i);
                 }
             })
